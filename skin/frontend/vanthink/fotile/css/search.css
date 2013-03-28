@@ -113,11 +113,7 @@
 .advanced-search li label{
     margin-right: 8px;
 }
-.catalogsearch-advanced-result .col-main{
-    float: right;
-    width: 747px;
-    margin: 0 12px;
-}
+
 .catalogsearch-advanced-result .advanced-search-summary{
     padding-left: 20px;
     min-height: 40px;
@@ -128,10 +124,7 @@
     border: 1px #d4d4d4 solid;
     background:#f6f7f7;
 }
-.catalogsearch-advanced-result .col-main{
-    width: 1000px;
-    float: none;
-}
+
 .catalogsearch-advanced-result .col-left,.catalogsearch-advanced-result .category-products{
     margin-top: 10px;
 }
