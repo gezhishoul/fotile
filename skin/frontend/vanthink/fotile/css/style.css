@@ -141,11 +141,18 @@ article a{
 }
 article section{
     float: right;
-    padding-top: 4px;
-    width: 650px;
+    width: 200px;
+}
+section .tips p{
+    color: #b6b6b6;
+    margin-top: 10px;
+    line-height: normal;
 }
 .hello{
     text-align: right;
+    float: left;
+    width: 400px;
+    margin-top: 48px;
 }
 .hello li{
     display: inline;
@@ -153,6 +160,9 @@ article section{
     height: 22px;
     line-height: 21px;
     margin: 0 4px;
+}
+.hello li.posr {
+    padding: 4px 10px;
 }
 .hello li b{
     border-width: 4px;
@@ -177,47 +187,55 @@ article section{
     margin-left: 6px;
     bottom: 2px;
 }
-header{
-    margin-top: 34px;
-    width: 290px;
+header h1{
+    margin: 10px 0 0 40px;
+    width: 240px;
+    float: left;
 }
-#search_mini_form,#advanced-search-list li{
+header .header {
+    width: 100%;
+}
+header {
+    float: left;
+    width: 750px;
+}
+#search_mini_form,#advanced-search-list li,.header{
     overflow: hidden;
 }
 #search_mini_form{
-    width: 254px;
+    float: left;
 }
 .search-area{
-    width: 254px;
-    height: 52px;
+    margin: 5px 0 0 40px;
     overflow: hidden;
-    margin-top: 12px;
 }
 .form-search{
-    width: 244px;
-    height: 25px;
-    padding-left: 5px;
+    float: left;
+    width: 280px;
+    height: 20px;
     border: 1px #303030 solid;
+    background: #000;
     overflow: hidden;
 }
 #search{
-    height: 22px;
-    line-height: 22px;
-    width: 221px;
+    height: 14px;
+    padding: 3px;
+    width: 254px;
     border: none;
-    background: #000000;
+    background: #000;
     color: #b6b6b6;
     box-shadow: none;
-    margin-top: 1px;
+    overflow: hidden;
 }
 .form-search button{
     width: 20px;
-    height: 24px;
+    height: 20px;
     background: url(../images/search.gif) no-repeat left center;
 }
+
 .search-area ul{
-    overflow: hidden;
-    margin-top: 4px;
+    float: left;
+    margin-left: 10px;
 }
 .search-area ul li{
     display: inline;
@@ -229,6 +247,7 @@ header{
 .search-area .form-laster{
     clear: both;
     overflow: hidden;
+    display: none;
 }
 .search-area .form-laster a{
     color: #fff;
@@ -241,12 +260,11 @@ header{
     bottom: 2px;
 }
 nav{
-    width: 1000px;
+    width: 1020px;
     margin: 16px auto 0 auto;
     height: 36px;
 }
 .nav{
-    width: 785px;
     height: 24px;
     z-index: 9;
 }
@@ -258,17 +276,17 @@ nav{
 
 nav .nav li a{
     background-image: url(../images/nav.jpg);
-    height: 24px;
+    height: 26px;
     display: block;
     text-indent: -9999px;
     background-repeat:no-repeat;
 }
 nav .nav-first a{
-    width: 64px;
+    width: 79px;
     background-position:0px 0px;
 }
 .nav-first a:hover{
-    background-position:0px -24px;
+    background-position:0px -34px;
 }
 .words3 a{
     width: 60px;
@@ -277,68 +295,89 @@ nav .nav-first a{
     width: 58px;
 }
 .nav .nav2 a{
-    background-position:-74px -0px;
+    width: 77px;
+    background-position: -79px 0px;
 }
 .nav2 a:hover{
-    background-position:-74px -24px;
+    background-position: -79px -34px;
 }
 .nav3 a{
-    background-position: -136px 0px;
+    width: 86px;
+    background-position: -156px 0px;
 }
 .nav3 a:hover{
-    background-position: -136px -24px;
+    background-position: -156px -34px;
 }
 .nav4 a{
-    background-position:-201px -0px;
+    width: 73px;
+    background-position: -242px 0px;
 }
 .nav4 a:hover{
-    background-position:-201px -24px;
+    background-position: -242px -34px;
 }
 .nav5 a{
-    background-position:-256px -0px;
+    width: 69px;
+    background-position: -315px 0px;
 }
 .nav5 a:hover{
-    background-position:-256px -24px;
+    background-position: -315px -34px;
 }
 .nav6 a{
-    background-position:-317px -0px;
+    width: 70px;
+    background-position: -384px 0px;
 }
 .nav6 a:hover{
-    background-position:-317px -24px;
+    background-position: -384px -34px;
 }
 .nav7 a{
-    background-position:-383px -0px;
+    width: 86px;
+    background-position: -454px 0px;
 }
 .nav7 a:hover{
-    background-position:-383px -24px;
+    background-position: -454px -34px;
 }
 .nav8 a{
-    background-position:-443px -0px;
+    background-position: -540px 0px;
 }
 .nav8 a:hover{
-    background-position:-443px -24px;
+    background-position: -540px -34px;
 }
 .nav9 a{
-    width:96px;
-    background-position:-511px -0px;
+    width:80px;
+    background-position: -600px 0px;
 }
 .nav9 a:hover{
-    background-position:-511px -24px;
+    background-position: -600px -34px;
 }
 .nav10 a{
-    width:76px;
-    background-position:-608px -0px;
+    width: 95px;
+    background-position: -680px 0px;
 }
 .nav10 a:hover{
-    background-position:-608px -24px;
+    background-position: -680px -34px;
 }
 .nav11 a{
-    width: 82px;
-    background-position:-695px -0px;
+    width: 75px;
+    background-position: -780px 0px;
 }
 .nav11 a:hover{
-    background-position:-695px -24px;
+    background-position: -780px -34px;
 }
+.nav12 a{
+    width: 80px;
+    background-position: -850px 0px;
+}
+.nav12 a:hover{
+    background-position: -850px -34px;
+}
+.nav13 a{
+    width: 90px;
+    background-position: -930px 0px;
+}
+.nav13 a:hover{
+    background-position: -930px -34px;
+}
+
 .nav li .drop-down{
     display: none;
     position: absolute;
@@ -367,6 +406,7 @@ nav .nav-first a{
 .drop-down dt{
     padding-left: 12px;
     font-weight: 600;
+    color: #fff;
     background: url(../images/menu-icon.gif) no-repeat left center;
 }
 .drop-down section{
@@ -406,10 +446,11 @@ nav .nav-first a{
 .drop-down .w130{
     width: 130px;
 }
+/*
 .nav9 dl a{
     font-size: 14px;
     font-weight: 600;
-}
+}*/
 .nav6 .drop-down .dropThree {
     margin-left: 0;
 }
@@ -464,8 +505,9 @@ nav .nav-first a{
 }
 .bill{
     width: 196px;
-    float: right;
     height: 33px;
+    margin-top: 10px;
+    z-index: 22;
 }
 .bill span{
     line-height: 23px;
@@ -488,7 +530,7 @@ nav .nav-first a{
 }
 footer{
      width: 1028px;
-     height: 174px;
+     height: 441px;
      margin: 0 auto;
      background: url(../images/foot-back.gif) repeat-x;
      box-shadow: 10px 14px 20px #959595,-10px 14px 20px #959595;
@@ -500,15 +542,31 @@ footer{
 .cms-home footer{
     box-shadow: none;
 }
-footer img{
-   margin: 18px 0 0  70px;
-}
+
 #footer{
     width: 1002px;
     margin: 10px auto;
 }
 .foot-service{
-    margin-top:35px;
+    padding: 0 40px;
+}
+.foot-service .nav-list{
+    overflow: hidden;
+    margin-top: 105px;
+}
+.foot-service .nav-list li {
+    width: 114px;
+    text-align: center;
+    float: left;
+}
+.foot-service .nav-list li.first {
+    width: 60px;
+}
+.foot-service .nav-list li.last {
+    width: 80px;
+}
+.foot-service .nav-list li a {
+    color: #d5d5d5;
 }
 footer a,footer span{
     color: #8b8b8b;
@@ -520,8 +578,41 @@ footer a,footer span{
 }
 .foot-nav{
     overflow: hidden;
-    padding: 16px 0 0 4px;
+    padding: 16px 0 0 33px;
+    margin-top: 135px;
 }
+.foot-nav li{
+    float: left;
+    width: 255px;
+    margin-right: 20px;
+    color: #6d6d6d;
+}
+.foot-nav li.writ {
+    width: 190px;
+}
+.foot-nav li.house {
+    width: 150px;
+    margin: 0;
+}
+.foot-nav li.house a{
+    background: url(../images/foot-house.jpg) 0 -35px no-repeat;
+    width: 150px;
+    height: 30px;
+    margin-bottom: 15px;
+    text-indent: -9999em;
+    overflow: hidden;
+    display: block;
+}
+.foot-nav li.house a.collection {
+    background-position: 0 0;
+    margin-top: 65px;
+}
+.foot-nav li h3{
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+/*
 .foot-nav a{
     margin: 0 4px;
     float: left;
@@ -543,7 +634,7 @@ footer a,footer span{
     color: #f08200;
     cursor: default;
     float: none;
-}
+}*/
 .foot-info{
     width: 600px;
     margin-top: 6px;
@@ -802,7 +893,6 @@ footer a,footer span{
     color: #000000;
 }
 .normal{
-    overflow: hidden;
     width: 1000px;
     margin: 0 auto;
 }
@@ -1110,7 +1200,7 @@ footer a,footer span{
 /* =============== add by wangxianbin ==============*/
 
 .ww-online { margin-left: 5px; }
-#online-service { position: fixed; display: none; color: #B6B6B6; z-index: 100; top: 0px}
+#online-service { position: fixed; display: none!important; color: #B6B6B6; z-index: 100; top: 0px}
 
 .online-serivce-list { clear:both; }
 .online-serivce-list li { float: left; background: none repeat scroll 0 0 #000000; padding: 4px; }

@@ -22,14 +22,17 @@ jQuery(function() {
         jQuery(this).children('div').stop().hide(100);
     }
     var searchArea=jQuery('#search_mini_form input');
-    searchArea.click(function(){
-        if(searchArea.text()!=null){
-            searchArea.attr('placeholder','');
+    searchArea.focus(function(){
+        if(searchArea.val()!=null){
+           searchArea.attr('placeholder','');
+           searchArea.val('');
         }
-        searchArea.blur(function(){
-            if(searchArea.text()==''){
-                searchArea.attr('placeholder','请输入关键词...'); }
-        })
+    })
+    searchArea.blur(function(){
+        if(searchArea.val()==''){
+           /* searchArea.attr('placeholder','请输入关键词...'); */
+           searchArea.val('请输入关键词...');
+        }
     })
     var compareSide=jQuery('.block-compare');
     var compareSideLi=jQuery('.block-compare p');

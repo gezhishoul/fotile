@@ -31,74 +31,79 @@
     <div id="header">
     <div class="normal cf top">
         <section>
-            <ul class="hello posr micya">
-                <li class="register">您好，欢迎来到方太官方商城！</li>
-                <?php if(Mage::getSingleton('customer/session')->isLoggedIn()):?>
-                <li class="register"><a class="coyel" href="<?php echo $this->getUrl('sales/order/history');?>">我的账户</a><strong class="coyel posr">|</strong></li>
-
-                <li class="login"><a class="coyel" href="<?php echo $this->getUrl('customer/account/logout');?>">退出</a></li>
-                <?php else:?>
-                <li class="register"><a class="coyel" href="<?php echo $this->getBaseUrl() ?>customer/account/create">注册</a><strong class="coyel posr">|</strong></li>
-                <li class="login"><a class="coyel" href="<?php echo $this->getBaseUrl() ?>customer/account/login">登录</a></li>
-                <?php endif?>
-<!--                <li class="posr">
-                    <a href="#">
-                        <img src="<?php print $this->getSkinUrl();?>/images/otherlogin.png" alt="" width="19" height="19" /></a><b></b>
-                        <div class="otherlogin" id="otherlogin">
-                            <dl>
-                                <dd>
-                            <a href="#" class="sina"></a></dd>
-                            <dd>
-                            <a href="#" class="alipay"></a>
-                            </dd>
-                            </dl>
-                        </div>
-                </li>
-                <li class="posr curp">
-                    我的方太 <b></b>
-                    <dl class="otherlogin" id="my-info">
-                        <dd><a href="#">我的订单</a></dd>
-                        <dd><a href="#">ming</a></dd>
-                        <dd><a href="#">song</a></dd>
-                    </dl>
-                </li> -->
-
-<style>
-
-</style>
-                <li class="nopa posr"><span>服务热线</span>&nbsp;&nbsp;&nbsp;<span class="coyel">4000-315-315</span></li>
-                <li class="nopa posr">
-                  <span>在线客服</span>
-                  <span class="ww-online"><img src="<?php print $this->getSkinUrl();?>/images/ww.png"/>客服一</span>
-                  <span class="ww-online" id="online-service-more"><img src="<?php print $this->getSkinUrl();?>/images/ww.png"/><a  href="javascript:void(0);">更多</a></span>
-                </li>
-            </ul>
-            <div class="search-area fr">
-          <?php echo $this->getChildHtml('topSearch') ?>
-          <?php echo $this->getChildHtml('topContainer'); ?>
-          <?php echo $this->getChildHtml('seo.searchterm') ?>
+            <div class="tips">
+                <p class="nopa"><span>服务热线</span>&nbsp;&nbsp;&nbsp;<span class="coyel">4000-315-315</span></p>
+                <p><span>官方正品</span>&nbsp;&nbsp;&nbsp;<span>全场包邮</span></p>
+            </div>
+            <div class="bill cf posr">
+                <?php echo $this->getChildHtml('cart_sidebar_mini') ?>
             </div>
         </section>
         <header>
-            <h1><a href="/index.php">
-                <img src="<?php print $this->getSkinUrl();?>/images/logo.png" alt="方太官方商城" />
-                </a>
-            </h1>
+            <div  class="header">
+                <h1><a href="/index.php">
+                    <img src="<?php print $this->getSkinUrl();?>/images/logo.png" alt="方太官方商城" />
+                    </a>
+                </h1>
+                <ul class="hello micya posr">
+                    <li class="register">您好，欢迎来到方太官方商城！</li>
+                    <?php if(Mage::getSingleton('customer/session')->isLoggedIn()):?>
+                    <li class="register"><a class="coyel" href="<?php echo $this->getUrl('sales/order/history');?>">我的账户</a><strong class="coyel posr">|</strong></li>
+
+                    <li class="login"><a class="coyel" href="<?php echo $this->getUrl('customer/account/logout');?>">退出</a></li>
+                    <?php else:?>
+                    <li class="register"><a class="coyel" href="<?php echo $this->getBaseUrl() ?>customer/account/create">注册</a><strong class="coyel posr">|</strong></li>
+                    <li class="login"><a class="coyel" href="<?php echo $this->getBaseUrl() ?>customer/account/login">登录</a></li>
+                    <?php endif?>
+                     <li class="posr">
+                        <a href="#">
+                            <img src="<?php print $this->getSkinUrl();?>/images/otherlogin.png" alt="" width="19" height="19" /></a><b></b>
+                            <div class="otherlogin" id="otherlogin">
+                                <dl>
+                                    <dd>
+                                <a href="#" class="sina"></a></dd>
+                                <dd>
+                                <a href="#" class="alipay"></a>
+                                </dd>
+                                </dl>
+                            </div>
+                    </li>
+                    <li class="posr curp">
+                        我的方太 <b></b>
+                        <dl class="otherlogin" id="my-info">
+                            <dd><a href="#">我的订单</a></dd>
+                            <dd><a href="#">ming</a></dd>
+                            <dd><a href="#">song</a></dd>
+                        </dl>
+                    </li> 
+                    <!--<li class="nopa posr"><span>服务热线</span>&nbsp;&nbsp;&nbsp;<span class="coyel">4000-315-315</span></li>
+                    <li class="nopa posr">
+                      <span>在线客服</span>
+                      <span class="ww-online"><img src="<?php print $this->getSkinUrl();?>/images/ww.png"/>客服一</span>
+                      <span class="ww-online" id="online-service-more"><img src="<?php print $this->getSkinUrl();?>/images/ww.png"/><a  href="javascript:void(0);">更多</a></span>
+                    </li>-->
+                </ul>
+            </div>
+            <div class="search-area">
+                <?php echo $this->getChildHtml('topSearch'); ?>
+                <?php echo $this->getChildHtml('topContainer'); ?>
+                <?php echo $this->getChildHtml('seo.searchterm'); ?>
+            </div>
         </header>
     </div>
     <nav>
-        <div class="bill cf posr">
-           <?php echo $this->getChildHtml('cart_sidebar_mini') ?>
 
-        </div>
 
 <ul class="nav cf posr">
             <li class="nav-first">
-                <a href="/index.php" title="主页">
-                主页
+                <a href="/index.php" title="首页">
+                首页
                 </a>
             </li>
             <li class="nav2 words3">
+                <a href="">热卖套装</a>
+            </li>
+            <li class="nav3 words3">
                 <a href="/youyanji.html">油烟机</a>
                 <div class="drop-down">
                     <section class="first-section">
@@ -197,8 +202,8 @@
                     <a href="#" class="findout">查看全部</a>
                 </div>
             </li>
-            <li class="nav3 words3">
-                <a href="/ranqizao.html">燃气灶</a>
+            <li class="nav4 words2">
+                <a href="/ranqizao.html">灶具</a>
                 <div class="drop-down">
                    <section class="first-section">
                         <dl>
@@ -283,168 +288,7 @@
                     <a href="#" class="findout">查看全部</a>
                 </div>
             </li>
-            <li class="nav4 words2">
-                <a href="/zhengxiang.html">蒸箱</a>
-                <div class="drop-down">
-                    <section class="first-section">
-                        <dl>
-                            <dt>
-                                <a href="#">按键类型</a>
-                            </dt>
-                            <dd>
-                                <a href="#">触摸式</a>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>
-                                <a href="#">材质</a>
-                            </dt>
-                            <dd>
-                                <a href="#">不锈钢</a>
-                            </dd>
-                            <dd>
-                                <a href="#">钢化玻璃</a>
-                            </dd>
-                            <dd>
-                                <a href="#">不锈钢+钢化玻璃</a>
-                            </dd>
-                        </dl>
-                    </section>
-                    <section class="dropdown-img dropThree noback">
-                        <img src="/media/menu-zhengxiang1.png" alt="">
-                    </section>
-                    <section class="dropdown-img dropThree noback">
-                        <a href="#"></a>
-                        <img src="/media/menu-zhengxiang2.png" alt="" />
-                        </a>
-                    </section>
-                    <a href="#" class="findout">查看全部</a>
-                </div>
-            </li>
             <li class="nav5 words2">
-                <a href="/kaoxiang.html">烤箱</a>
-                <div class="drop-down">
-                    <section class="first-section">
-                        <dl>
-                            <dt>
-                                <a href="#">款式</a>
-                            </dt>
-                            <dd>
-                                <a href="#">台式</a>
-                            </dd>
-                            <dd>
-                                <a href="#">卧式</a>
-                            </dd>
-                            <dd>
-                                <a href="#">嵌入式</a>
-                            </dd>
-
-                        </dl>
-                        <dl>
-                            <dt>
-                                <a href="#">材质</a>
-                            </dt>
-                            <dd>
-                                <a href="#">不锈钢</a>
-                            </dd>
-                            <dd>
-                                <a href="#">钢化玻璃</a>
-                            </dd>
-                            <dd>
-                                <a href="#">不锈钢+钢化玻璃</a>
-                            </dd>
-                        </dl>
-                    </section>
-                    <section class="dropdown-img dropThree">
-                        <img src="/media/menu-kaoxiang1.png" alt="">
-                    </section>
-                    <section>
-                        <dl>
-                            <dt>
-                                <a href="#">开孔尺寸</a>
-                            </dt>
-                            <dd>
-                                <a href="#">宽560×高590×深550</a>
-                            </dd>
-                            <dd>
-                                <a href="#">宽560×高450×深550</a>
-                            </dd>
-                        </dl>
-                    </section>
-                    <section class="dropdown-img dropThree noback">
-                        <img src="/media/menu-kaoxiang2.png" alt="">
-                    </section>
-                    <a href="#" class="findout">查看全部</a>
-                </div>
-            </li>
-            <li class="nav6 words3">
-                <a href="/weibolu.html">微波炉</a>
-                <div class="drop-down">
-                    <section class="first-section">
-                        <dl>
-                            <dt>
-                                <a href="#">额定输入功率</a>
-                            </dt>
-                            <dd>
-                                <a href="#">微波1300W</a>
-                            </dd>
-                            <dd>
-                                <a href="#">微波1300W和烧烤850W</a>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>
-                                <a href="#">材质</a>
-                            </dt>
-                            <dd>
-                                <a href="#">不锈钢</a>
-                            </dd>
-                            <dd>
-                                <a href="#">钢化玻璃</a>
-                            </dd>
-                            <dd>
-                                <a href="#">不锈钢+钢化玻璃</a>
-                            </dd>
-                        </dl>
-                    </section>
-                    <section class="w130">
-                        <dl>
-                            <dt>
-                                <a href="#">加热方式</a>
-                            </dt>
-                            <dd>
-                                <a href="#">微波</a>
-                            </dd>
-                            <dd>
-                                <a href="#">烧烤+微波</a>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>
-                                <a href="#">底盘类型</a>
-                            </dt>
-                            <dd>
-                                <a href="#">旋转</a>
-                            </dd>
-                            <dd>
-                                <a href="#">平板式</a>
-                            </dd>
-                        </dl>
-                    </section>
-                    <section class="dropThree dropdown-img">
-                        <a href="#">
-                        <img src="/media/menu-weibolu1.png" alt="" />
-                        </a>
-                    </section>
-                    <section class="dropThree dropdown-img noback">
-                        <a href="#">
-                        <img src="/media/menu-weibolu2.png" alt="" />
-                        </a>
-                    </section>
-                    <a href="#" class="findout">查看全部</a>
-                </div>
-            </li>
-            <li class="nav7 words3">
                 <a href="/xiaodugui.html">消毒柜</a>
                 <div class="drop-down">
                     <section class="first-section">
@@ -520,7 +364,8 @@
                     <a href="#" class="findout">查看全部</a>
                 </div>
             </li>
-            <li class="nav8 words3"><a href="reshuiqi.html">热水器</a>
+            <li class="nav6 words3">
+                <a href="reshuiqi.html">热水器</a>
                  <div class="drop-down">
                     <section class="first-section">
                         <dl>
@@ -595,7 +440,113 @@
                     <a href="#" class="findout">查看全部</a>
                 </div>
             </li>
-            <li class="nav9"><a href="/yanzaotaozhuang.html">烟灶套装</a>
+            <li class="nav7 words3">
+                <a href="/zhengxiang.html">蒸箱</a>
+                <div class="drop-down">
+                    <section class="first-section">
+                        <dl>
+                            <dt>
+                                <a href="#">按键类型</a>
+                            </dt>
+                            <dd>
+                                <a href="#">触摸式</a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <a href="#">材质</a>
+                            </dt>
+                            <dd>
+                                <a href="#">不锈钢</a>
+                            </dd>
+                            <dd>
+                                <a href="#">钢化玻璃</a>
+                            </dd>
+                            <dd>
+                                <a href="#">不锈钢+钢化玻璃</a>
+                            </dd>
+                        </dl>
+                    </section>
+                    <section class="dropdown-img dropThree noback">
+                        <img src="/media/menu-zhengxiang1.png" alt="">
+                    </section>
+                    <section class="dropdown-img dropThree noback">
+                        <a href="#"></a>
+                        <img src="/media/menu-zhengxiang2.png" alt="" />
+                        </a>
+                    </section>
+                    <a href="#" class="findout">查看全部</a>
+                </div>
+            </li>
+            <li class="nav8 words3">
+                <a href="/weibolu.html">微波炉</a>
+                <div class="drop-down">
+                    <section class="first-section">
+                        <dl>
+                            <dt>
+                                <a href="#">额定输入功率</a>
+                            </dt>
+                            <dd>
+                                <a href="#">微波1300W</a>
+                            </dd>
+                            <dd>
+                                <a href="#">微波1300W和烧烤850W</a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <a href="#">材质</a>
+                            </dt>
+                            <dd>
+                                <a href="#">不锈钢</a>
+                            </dd>
+                            <dd>
+                                <a href="#">钢化玻璃</a>
+                            </dd>
+                            <dd>
+                                <a href="#">不锈钢+钢化玻璃</a>
+                            </dd>
+                        </dl>
+                    </section>
+                    <section class="w130">
+                        <dl>
+                            <dt>
+                                <a href="#">加热方式</a>
+                            </dt>
+                            <dd>
+                                <a href="#">微波</a>
+                            </dd>
+                            <dd>
+                                <a href="#">烧烤+微波</a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <a href="#">底盘类型</a>
+                            </dt>
+                            <dd>
+                                <a href="#">旋转</a>
+                            </dd>
+                            <dd>
+                                <a href="#">平板式</a>
+                            </dd>
+                        </dl>
+                    </section>
+                    <section class="dropThree dropdown-img">
+                        <a href="#">
+                        <img src="/media/menu-weibolu1.png" alt="" />
+                        </a>
+                    </section>
+                    <section class="dropThree dropdown-img noback">
+                        <a href="#">
+                        <img src="/media/menu-weibolu2.png" alt="" />
+                        </a>
+                    </section>
+                    <a href="#" class="findout">查看全部</a>
+                </div>
+            </li>
+            <li class="nav9">
+                <!--<a href="/yanzaotaozhuang.html">烟灶套装</a>
                  <div class="drop-down">
                     <section class="first-section">
                         <dl>
@@ -618,10 +569,65 @@
                          <img src="/media/menu-yztz2.png" alt="" />
                     </section>
                     <a href="#" class="findout">查看全部</a>
+                </div>-->
+                <a href="/kaoxiang.html">烤箱</a>
+                <div class="drop-down">
+                    <section class="first-section">
+                        <dl>
+                            <dt>
+                                <a href="#">款式</a>
+                            </dt>
+                            <dd>
+                                <a href="#">台式</a>
+                            </dd>
+                            <dd>
+                                <a href="#">卧式</a>
+                            </dd>
+                            <dd>
+                                <a href="#">嵌入式</a>
+                            </dd>
+
+                        </dl>
+                        <dl>
+                            <dt>
+                                <a href="#">材质</a>
+                            </dt>
+                            <dd>
+                                <a href="#">不锈钢</a>
+                            </dd>
+                            <dd>
+                                <a href="#">钢化玻璃</a>
+                            </dd>
+                            <dd>
+                                <a href="#">不锈钢+钢化玻璃</a>
+                            </dd>
+                        </dl>
+                    </section>
+                    <section class="dropdown-img dropThree">
+                        <img src="/media/menu-kaoxiang1.png" alt="">
+                    </section>
+                    <section>
+                        <dl>
+                            <dt>
+                                <a href="#">开孔尺寸</a>
+                            </dt>
+                            <dd>
+                                <a href="#">宽560×高590×深550</a>
+                            </dd>
+                            <dd>
+                                <a href="#">宽560×高450×深550</a>
+                            </dd>
+                        </dl>
+                    </section>
+                    <section class="dropdown-img dropThree noback">
+                        <img src="/media/menu-kaoxiang2.png" alt="">
+                    </section>
+                    <a href="#" class="findout">查看全部</a>
                 </div>
             </li>
             <li class="nav10">
-                <a href="/mdsp.html/">门店商品</a>
+               <a href=""> 官方配件</a>
+               <!--<a href="/mdsp.html/">门店商品</a>
                 <div class="drop-down">
                     <section class="first-section">
                         <dl>
@@ -694,10 +700,17 @@
                     <section class="dropThree dropdown-img noback">
                          <img src="/media/menu-mdsp1.png" alt="" />
                     </section>
-                </div>
+                </div>-->
             </li>
             <li class="nav11">
-                <a href="/specialTopic">专题活动</a>
+                <!--<a href="/specialTopic">专题活动</a>-->
+                <a href="">新品首发</a>
+            </li>
+            <li class="nav12">
+                <a href="">IC无悔购</a>
+            </li>
+            <li class="nav13">
+                <a href="">方太官网</a>
             </li>
         </ul>
     </nav>
