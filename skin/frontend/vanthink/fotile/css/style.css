@@ -164,6 +164,9 @@ section .tips p{
 .hello li.posr {
     padding: 4px 10px;
 }
+.hello li.curp {
+    margin-left: 40px;
+}
 .hello li b{
     border-width: 4px;
     border-style: solid;
@@ -173,7 +176,6 @@ section .tips p{
     width: 0;
     height: 0;
     right: -3px;
-    *bottom: 8px;
     _bottom:40px;
 }
 .hello .login{
@@ -208,6 +210,7 @@ header {
 .search-area{
     margin: 5px 0 0 40px;
     overflow: hidden;
+    _width: 100%;
 }
 .form-search{
     float: left;
@@ -262,7 +265,6 @@ header {
 nav{
     width: 1020px;
     margin: 16px auto 0 auto;
-    height: 36px;
 }
 .nav{
     height: 24px;
@@ -529,11 +531,11 @@ nav .nav-first a{
     float: left;
 }
 footer{
-     width: 1028px;
-     height: 441px;
-     margin: 0 auto;
-     background: url(../images/foot-back.gif) repeat-x;
-     box-shadow: 10px 14px 20px #959595,-10px 14px 20px #959595;
+    width: 1022px;
+    height: 441px;
+    margin: 0 auto;
+    background: #fff url(../images/foot-back.gif) center 0 no-repeat;
+    box-shadow: 10px 14px 20px #959595,-10px 14px 20px #959595
 }
 .attention{
    margin-right: 38px;
@@ -581,11 +583,14 @@ footer a,footer span{
     padding: 16px 0 0 33px;
     margin-top: 135px;
 }
+.foot-nav ul {
+    overflow: hidden;
+}
 .foot-nav li{
     float: left;
     width: 255px;
-    margin-right: 20px;
-    color: #6d6d6d;
+    margin-right: 24px;
+    color: #8d8d8d;
 }
 .foot-nav li.writ {
     width: 190px;
@@ -595,9 +600,9 @@ footer a,footer span{
     margin: 0;
 }
 .foot-nav li.house a{
-    background: url(../images/foot-house.jpg) 0 -35px no-repeat;
+    background: url(../images/foot-house.jpg) 0 -34px no-repeat;
     width: 150px;
-    height: 30px;
+    height: 32px;
     margin-bottom: 15px;
     text-indent: -9999em;
     overflow: hidden;
