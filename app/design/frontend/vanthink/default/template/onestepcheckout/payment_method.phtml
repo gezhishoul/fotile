@@ -69,32 +69,44 @@ if($helper->settings['hide_nonfree_payment_methods'])   {
 </style>
 
 <fieldset class="form-list">
-    <ul id="payment_form cf">
+  <ul id="payment_form cf">
     <li>
-                    <input name="payment[method]" type="radio" value="alipay_payment" id="p_method_alipay_payment"/><label for="p_method_alipay_payment">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/aliPayment.png') ?>"  alt="支付宝" /></label></li><li>
-                    <div style="display:none;">
-                    <input type="radio" title="财付通" name="payment[method]" value="tenpay_payment" id="p_method_tenpay_payment_ten" checked='checked'>
-                     </div>
-                    <input name="payment[bank_type]" type="radio" value="tenpay_payment" checked='checked'  /><label for="p_method_tenpay_payment_ten">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/tencentPayment.png') ?>"  alt="财付通" /></label> </li><li>
-                    <input name="payment[bank_type]" type="radio" value="1001" id="btn_1001"  /><label for="btn_1001">&nbsp;<img  src="<?php echo $this->getSkinUrl('images/tenpay/jianshe.png') ?>"  /></label></li><li>
-                    <input name="payment[bank_type]" type="radio" value="1002" id="btn_1002"  /><label for="btn_1002">&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/nongye.png') ?>" /></label></li><li>
-            
-                    <input name="payment[bank_type]" type="radio" value="1003" id="btn_1003"  /><label for="btn_1003">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/gongshang.png') ?>" /></label>
-                    </li><li>
-                    <input name="payment[bank_type]" type="radio" value="1005" id="btn_1005"  /><label for="btn_1005">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/guangda.png') ?>" /></label>
-                    </li><li>
-                    <input name="payment[bank_type]" type="radio" value="1032" id="btn_1032"  /><label for="btn_1032">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/zhaoshang.png') ?>" /></label></li><li>
-                    <input name="payment[bank_type]" type="radio" value="1022" id="btn_1022"  /><label for="btn_1022">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/minsheng.png') ?>" /></label>
-                </li><li>
-                    <input name="payment[bank_type]" type="radio" value="1052" id="btn_1052"  /><label for="btn_1052">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/jiaotong.png') ?>" /></label>
-                    </li><li>
-                    <input name="payment[bank_type]" type="radio" value="1020" id="btn_1020" /><label for="btn_1020">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/pufa.png') ?>" /></label> 
-                    </li>
-                
-            
-    
-    
-</ul>
+      <input checked='checked' name="payment[method]" type="radio" value="alipay_payment" id="p_method_alipay_payment"/><label for="p_method_alipay_payment">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/aliPayment.png') ?>"  alt="支付宝" /></label></li>
+<!--     <li>
+      <div style="display:none;">
+        <input type="radio" title="财付通" name="payment[method]" value="tenpay_payment" id="p_method_tenpay_payment_ten" checked='checked' />
+      </div>
+      <input name="payment[bank_type]" type="radio" value="tenpay_payment" checked='checked'  /><label for="p_method_tenpay_payment_ten">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/tencentPayment.png') ?>"  alt="财付通" /></label> </li>
+    <li>
+      <input name="payment[bank_type]" type="radio" value="1001" id="btn_1001"  /><label for="btn_1001">&nbsp;<img  src="<?php echo $this->getSkinUrl('images/tenpay/jianshe.png') ?>"  /></label>
+    </li>
+    <li>
+      <input name="payment[bank_type]" type="radio" value="1002" id="btn_1002"  /><label for="btn_1002">&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/nongye.png') ?>" /></label>
+    </li>
+    <li>
+          
+      <input name="payment[bank_type]" type="radio" value="1003" id="btn_1003"  /><label for="btn_1003">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/gongshang.png') ?>" /></label>
+    </li>
+    <li>
+      <input name="payment[bank_type]" type="radio" value="1005" id="btn_1005"  /><label for="btn_1005">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/guangda.png') ?>" /></label>
+    </li>
+    <li>
+      <input name="payment[bank_type]" type="radio" value="1032" id="btn_1032"  /><label for="btn_1032">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/zhaoshang.png') ?>" /></label>
+    </li>
+    <li>
+      <input name="payment[bank_type]" type="radio" value="1022" id="btn_1022"  /><label for="btn_1022">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/minsheng.png') ?>" /></label>
+    </li>
+    <li>
+      <input name="payment[bank_type]" type="radio" value="1052" id="btn_1052"  /><label for="btn_1052">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/jiaotong.png') ?>" /></label>
+    </li>
+    <li>
+      <input name="payment[bank_type]" type="radio" value="1020" id="btn_1020" /><label for="btn_1020">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/pufa.png') ?>" /></label> 
+    </li>
+          
+      -->     
+          
+          
+  </ul>
 </fieldset>
 </div>
 <script type="text/javascript">
