@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -196,6 +196,7 @@ header h1{
 }
 header .header {
     width: 100%;
+    height: 72px;
 }
 header {
     float: left;
@@ -1211,3 +1212,75 @@ footer a,footer span{
 .online-serivce-list li { float: left; background: none repeat scroll 0 0 #000000; padding: 4px; }
 .online-serivce-list .first { background: url(../images/online-service-left.png) no-repeat scroll 0 0; }
 .online-serivce-list .last { background: url(../images/online-service-right.png) no-repeat scroll 0 0; }
+
+.hot-box {
+    padding: 1px 1px 10px;
+    width: 1020px;
+    margin: 0 auto;
+    background: #fff;
+    overflow: hidden;
+}
+.hot-title {
+    font: normal 20px/53px "Microsoft YaHei";   
+    color: #fff;
+    background: url(http://www.efotile.com/media//hd.jpg) 0 0 repeat-x;
+    text-indent: 22px;
+}
+.hot-content ul {
+    overflow: hidden;
+    margin-top: 10px;
+}
+.hot-content li {
+    float: left;
+    margin-left: 10px;
+    _display: inline;
+}
+.hot-content .img {
+    border: 1px solid #d8d8d8;
+    width: 240px;
+    height: 285px;
+    overflow: hidden;
+} 
+.hot-content .img a {
+    display: block;
+}
+.hot-content .desc {
+    font-size: 12px;
+    padding: 6px 0 0 15px;
+}
+.hot-content .price {
+    padding-left: 60px;
+    background: url(http://www.efotile.com/media//icon.jpg) 0 12px no-repeat;
+    font: normal 30px tahoma;  
+    padding-bottom: 20px; 
+}
+.hot-content .num,.hot-content .name {
+    font-size: 18px;
+    font-family: "SimSun";
+}
+.hot-box .banner {
+    margin: 0 auto;
+    width: 1006px;
+    overflow: hidden;
+    line-height: 0;
+    position: relative;
+}
+.hot-box .banner a{
+    position: absolute;
+    right: 340px;
+    bottom: 34px;
+    background: #9f714f;
+    font: normal 15px/30px "SimHei";
+    display: block;
+    width: 125px;
+    overflow: hidden;
+    text-align: center;
+    color: #000;
+}
+.hot-box .banner .enter-left{
+    left: 340px;
+}
+.std-content {
+    line-height: 0;
+    overflow: hidden;
+}
