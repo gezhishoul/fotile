@@ -55,21 +55,13 @@
                     <li class="register"><a class="coyel" href="<?php echo $this->getBaseUrl() ?>customer/account/create">注册</a><strong class="coyel posr">|</strong></li>
                     <li class="login"><a class="coyel" href="<?php echo $this->getBaseUrl() ?>customer/account/login">登录</a></li>
                     <?php endif?>
-                     <!--<li class="posr">
-                        <a href="#">
-                            <img src="<?php print $this->getSkinUrl();?>/images/otherlogin.png" alt="" width="19" height="19" /></a><b></b>
-                            <div class="otherlogin" id="otherlogin">
-                                <dl>
-                                    <dd>
-                                <a href="#" class="sina"></a></dd>
-                                <dd>
-                                <a href="#" class="alipay"></a>
-                                </dd>
-                                </dl>
-                            </div>
-                    </li>-->
                     <li class="posr curp">
-                        我的方太 <b></b>
+                      <?php if(Mage::getSingleton('customer/session')->isLoggedIn()):?>
+                      <a href="<?php echo $this->getUrl('sales/order/history');?>">我的方太</a>
+                      <?php else:?>
+                      <a href="<?php echo $this->getBaseUrl() ?>customer/account/login">我的方太</a>
+                      <?php endif?>
+                        <b></b>
                         <dl class="otherlogin" id="my-info">
                             <dd><a href="#">我的订单</a></dd>
                             <dd><a href="#">ming</a></dd>
