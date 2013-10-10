@@ -503,9 +503,7 @@ nav .nav-first a{
 #features,#features img,.jshowoff{
     width: 100%;
 }
-.jshowoff-slidelinks{
-    display: none;
-}
+
 .bill{
     width: 196px;
     height: 33px;
@@ -930,7 +928,7 @@ footer a,footer span{
 
 /*============hot-sale===========*/
 .cms-home .wrapper{
-    background:#e2e2e2;
+    background:#525252;
 }
 .sales{
     width: 1000px;
@@ -1283,4 +1281,48 @@ footer a,footer span{
 .std-content {
     line-height: 0;
     overflow: hidden;
+}
+
+
+.jshowoff-1-slidelinks {
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    display: none;
+}
+.jshowoff-1-slidelinks .jshowoff-slidelink-0 {
+    display: block;
+    width: 30px;
+    height: 103px;
+    top: 0px;
+    left: 0px;
+    background: url(../images/banner-prev.png) no-repeat;
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    border: 0 none;
+    cursor: pointer;
+}
+.jshowoff-1-slidelinks .jshowoff-slidelink-1 {
+    display: none;
+}
+.jshowoff-1-slidelinks .jshowoff-slidelink-2 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: block;
+    width: 30px;
+    height: 103px;
+    background: url(../images/banner-next.png) no-repeat;
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    border: 0 none;
+    cursor: pointer;
 }

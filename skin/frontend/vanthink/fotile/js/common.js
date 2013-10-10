@@ -154,3 +154,16 @@ jQuery(function() {
         }
     });
 });
+
+
+/* add by wangxianbin@vanhtink.net at 2013-09-26 */
+(function($) {
+    $(document).ready(function(){
+        $(".std-content").hover(function(){
+            $('.jshowoff-1-slidelinks').show();
+        }, function(){
+            $('.jshowoff-1-slidelinks').hide();
+        });
+    });
+})(jQuery);
+
