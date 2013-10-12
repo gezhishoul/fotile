@@ -37,52 +37,48 @@
   <?php if( $this->isExpanded() ): ?>
   <div class="sorter cf">
 
-
     <div class="sort-by">
-      
-      <!-- <select onchange="setLocation(this.value)">
-           <option value="<?php echo $this->getOrderUrl('price', 'asc') ?>" <?php if($this->isOrderCurrent('price') && $this->getCurrentDirection()=='asc'): ?> selected="selected"<?php endif; ?>>
-           价格从低到高
-           </option>
-<option value="<?php echo $this->getOrderUrl('price', 'desc') ?>" <?php if($this->isOrderCurrent('price') && $this->getCurrentDirection()=='desc'): ?> selected="selected"<?php endif; ?>>
-价格从高到低
-</option>
-<option value="<?php echo $this->getOrderUrl('sales', 'desc') ?>" <?php if($this->isOrderCurrent('sales')): ?> selected="selected"<?php endif; ?>>
-销量从高到低
-</option>
-<option value="<?php echo $this->getOrderUrl('position', 'desc') ?>" <?php if($this->isOrderCurrent('position')): ?> selected="selected"<?php endif; ?>>
-上架从新到旧
-</option>
-</select>-->
-<div class="go-page fr">
-  <p class="amount fl">
-      <?php if($this->getLastPageNum()>1): ?>
-      <?php echo $this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
-      <?php else: ?>
-      <span><?php echo $this->__('%s Item(s)', $this->getTotalNum()) ?></span>
-      <?php endif; ?>
-    </p>
-    <?php echo $this->getPagerHtml() ?>
-</div>
-    <ul class="sorts cf">
-      <li class="sales-choices">
-        排序方式<b></b>
-      </li>
-       <li <?php if($this->isOrderCurrent('sales')): ?>class="sales_desc"<?php endif; ?> >
-        <a rel="nofollow" href="<?php echo $this->getOrderUrl('sales', 'desc') ?>">销量</a>
+      <div class="go-page fr">
+        <p class="amount fl">
+          <?php if($this->getLastPageNum()>1): ?>
+          <?php echo $this->__('Items %s to %s of %s total', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+          <?php else: ?>
+          <span><?php echo $this->__('%s Item(s)', $this->getTotalNum()) ?></span>
+          <?php endif; ?>
+        </p>
+        <?php echo $this->getPagerHtml() ?>
+      </div>
+
+      <ul class="sorts cf">
+        <li class="sales-choices">
+          排序方式<b></b>
+        </li>
+        <li <?php if($this->isOrderCurrent('sales')  && $this->getCurrentDirection()=='asc'):?>class="sales_asc"<?php endif; ?> 
+          <?php if($this->isOrderCurrent('sales') && $this->getCurrentDirection()=='desc'):?>class="sales_desc"<?php endif; ?>>
+          <?php if ($this->getCurrentDirection() == 'asc'): ?>
+          <a rel="nofollow" href="<?php echo $this->getOrderUrl('sales', 'desc') ?>">销量</a>
+          <?php else: ?>
+          <a rel="nofollow" href="<?php echo $this->getOrderUrl('sales', 'asc') ?>">销量</a>
+          <?php endif; ?>
+          <b></b>
+        </li>
+        <li <?php if($this->isOrderCurrent('price') && $this->getCurrentDirection()=='asc'): ?>class="price_asc"<?php endif; ?>
+          <?php if($this->isOrderCurrent('price') && $this->getCurrentDirection()=='desc'): ?>class="price_desc"<?php endif; ?>>
+          <?php if ($this->getCurrentDirection() == 'desc'): ?>
+          <a rel="nofollow" href="<?php echo $this->getOrderUrl('price', 'asc') ?>">价格</a> 
+          <?php else:?>
+          <a rel="nofollow" href="<?php echo $this->getOrderUrl('price', 'desc') ?>">价格</a> 
+          <?php endif ?>
+          <b></b>
+        </li>
+        <!-- class="price-up" -->
+        <!--
+        <li <?php if($this->isOrderCurrent('position')): ?>class="position_asc"<?php endif; ?>>
+        <a rel="nofollow" href="<?php echo $this->getOrderUrl('position', 'desc') ?>">上架</a>
         <b></b>
-      </li>
-      <li <?php if($this->isOrderCurrent('price') && $this->getCurrentDirection()=='asc'): ?>class="price_asc"<?php endif; ?>>
-      <a rel="nofollow" href="<?php echo $this->getOrderUrl('price', 'asc') ?>">价格</a> 
-      <b></b>
-      </li>
-      <!-- class="price-up" -->
-    <!--
-      <li <?php if($this->isOrderCurrent('position')): ?>class="position_asc"<?php endif; ?>>
-      <a rel="nofollow" href="<?php echo $this->getOrderUrl('position', 'desc') ?>">上架</a>
-      <b></b>
-      </li>-->
-    </ul>
+        </li>-->
+      </ul>
+
     </div>
 
   </div>

@@ -16,9 +16,14 @@
     left: 42px;
     background: url(../images/arrow-down.png) no-repeat;
 }
-.sales_desc b,.price_asc b,.position_asc b,.orderFoucs b{
+.sales_asc b, .price_asc b,.position_asc b,.orderFoucs b {
+    background: url(../images/arrowchosen-up.png) no-repeat;
+}
+
+.sales_desc b, .price_desc b {
     background: url(../images/arrowchosen-down.png) no-repeat;
 }
+
 .price-up b{
     background: url(../images/arrowchosen-up.png) no-repeat;
 }
