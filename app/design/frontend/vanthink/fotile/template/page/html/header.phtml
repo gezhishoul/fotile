@@ -48,7 +48,7 @@
           <ul class="hello micya posr">
             <li class="register">您好，欢迎来到方太官方商城！</li>
             <?php if(Mage::getSingleton('customer/session')->isLoggedIn()):?>
-            <li class="register"><a class="coyel" href="<?php echo $this->getUrl('sales/order/history');?>">我的账户</a><strong class="coyel posr">|</strong></li>
+    <li class="register"><a class="coyel" href="<?php echo $this->getUrl('sales/order/history');?>"><?php echo Mage::getSingleton('customer/session')->getCustomer()->getName() ?></a><strong class="coyel posr">|</strong></li>
 
             <li class="login"><a class="coyel" href="<?php echo $this->getUrl('customer/account/logout');?>">退出</a></li>
             <?php else:?>
