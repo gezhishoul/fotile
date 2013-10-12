@@ -55,19 +55,6 @@
             <li class="register"><a class="coyel" href="<?php echo $this->getBaseUrl() ?>customer/account/create">注册</a><strong class="coyel posr">|</strong></li>
             <li class="login"><a class="coyel" href="<?php echo $this->getBaseUrl() ?>customer/account/login">登录</a></li>
             <?php endif?>
-            <li class="posr curp">
-              <?php if(Mage::getSingleton('customer/session')->isLoggedIn()):?>
-              <a href="<?php echo $this->getUrl('sales/order/history');?>">我的方太</a>
-              <?php else:?>
-              <a href="<?php echo $this->getBaseUrl() ?>customer/account/login">我的方太</a>
-              <?php endif?>
-              <b></b>
-              <dl class="otherlogin" id="my-info">
-                <dd><a href="#">我的订单</a></dd>
-                <dd><a href="#">ming</a></dd>
-                <dd><a href="#">song</a></dd>
-              </dl>
-            </li> 
             <!--<li class="nopa posr"><span>服务热线</span>&nbsp;&nbsp;&nbsp;<span class="coyel">4000-315-315</span></li>
             <li class="nopa posr">
             <span>在线客服</span>
