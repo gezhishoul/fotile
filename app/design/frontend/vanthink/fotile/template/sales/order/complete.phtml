@@ -80,6 +80,7 @@
             <span class="separator"></span><a onclick="this.target='_blank'" style="margin-left:5px;" href="<?php echo $this->getUrl('alipay/payment/pay').'?orderid='.$_order->getRealOrderId(); ?>">支付</a>
             <?php elseif($paymentmethod=='tenpay_payment'): ?>
             <span class="separator"></span><a onclick="this.target='_blank'" style="margin-left:5px;" href="<?php echo $this->getUrl('tenpay/payment/pay').'?orderid='.$_order->getRealOrderId(); ?>">支付</a>
+            <span class="separator"></span><a onclick="this.target='_blank'" style="margin-left:5px;" href="<?php echo $this->getUrl('unionpay/payment/pay').'?orderid='.$_order->getRealOrderId(); ?>">支付</a>
             <?php elseif($paymentmethod=='consumerpay_payment'): ?>
             <span class="separator"></span><a onclick="this.target='_blank'" style="margin-left:5px;" href="<?php echo $this->getUrl('consumerpay/payment/pay').'?orderid='.$_order->getRealOrderId(); ?>">支付</a>
             <?php endif; ?>
@@ -90,6 +91,7 @@
             <?php endif; ?>
           </span>
         </td>
+
       </tr>
       <?php endforeach; ?>
     </tbody>

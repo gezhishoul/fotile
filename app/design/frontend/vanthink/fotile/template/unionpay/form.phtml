@@ -13,8 +13,8 @@
  * to license@magentocommerce.com so we can send you a copy immediately.
  *
  * @category	CosmoCommerce
- * @package 	CosmoCommerce_Alipay
- * @copyright	Copyright (c) 2009 CosmoCommerce,LLC. (http://www.cosmocommerce.com)
+ * @package 	CosmoCommerce_Unionpay
+ * @copyright	Copyright (c) 2009-2013 CosmoCommerce,LLC. (http://www.cosmocommerce.com)
  * @contact :
  * T: +86-021-66346672
  * L: Shanghai,China
@@ -24,13 +24,14 @@
 
 
 
-<fieldset class="form-divst">
+<fieldset class="form-divst unionpay">
 	<?php $_code=$this->getMethodCode() ?>
 	<ul id="payment_form_<?php echo $_code ?>">
-			<div class="img"><img  border="0"  alt="支付宝" src="<?php echo $this->getSkinUrl('images/alipay.gif');?>"/></div>
-
+		<div class="img">
+			<img src="/skin/frontend/vanthink/fotile//images/bank-online.png" alt="在线支付"/>
+		</div>
 		<div style="clear:both;">
-			<?php echo $this->__('下单后会转向支付宝网站，按支付宝的提示支付款项到商家的支付宝账户') ?>
+			通过银行在线支付可以直接通过输入各个银联卡号和密码完成支付
 		</div>
 	</ul>
 </fieldset>

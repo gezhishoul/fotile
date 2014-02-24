@@ -28,10 +28,10 @@
     <strong><?php echo $this->__('Sorry, no quotes are available for this order at this time.') ?></strong>
 <?php else: ?>
     <script type="text/javascript" src="/js/My97DatePicker/WdatePicker.js"></script>
-    <div class="delivery-time">
+    <!-- <div class="delivery-time">
         <span>请选择发货日期:</span>
         <input value="<?php echo date("Y-m-d", Mage::getModel('core/date')->timestamp(time())); ?>" id="delvery-time"  class="Wdate" type="text" onClick="WdatePicker()" />
-    </div>
+    </div>-->
 <dl class="shipment-methods">
     <?php foreach ($_shippingRateGroups as $code => $_rates): ?>
                 <dd><?php echo $this->getCarrierName($code) ?></dd>

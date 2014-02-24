@@ -43,16 +43,16 @@
             <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
             <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />             
             <ul class="form-list">
-                 <li class="fields disno">
+                 <li class="fields">
                     <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->toHtml() ?>
                 </li> 
                 <li>
-                    <label for="email_address" class="required"><em>*</em>电子邮件或手机：</label>
+                    <label for="email_address" class="required"><em>*</em>电子邮件：</label>
                     <div class="input-box">
-                        <input type="text" id="coverEmail" value="" class="input-text" />
-                        <input autocomplete="off" type="hidden" name="email" id="email_address" value="<?php echo $this->htmlEscape($this->getFormData()->getEmail()) ?>" title="<?php echo $this->__('Email Address') ?>" class="input-text validate-email required-entry" />
+                        <!-- <input type="text" id="coverEmail" value="" class="input-text" /> -->
+                        <input autocomplete="off" type="input" name="email" id="email_address" value="<?php echo $this->htmlEscape($this->getFormData()->getEmail()) ?>" title="<?php echo $this->__('Email Address') ?>" class="input-text validate-email required-entry" />
                     </div>
-                     <span class="note">请填写有效的Email地址或手机号码作为下次登录的用户名。</span>
+                     <span class="note">请填写有效的Email地址。</span>
                 </li>
                 <li>
                     <label for="password" class="required"><em>*</em><?php echo $this->__('Password') ?>：</label>
@@ -82,7 +82,7 @@
             <?php endif ?>
             </ul>
         </div>
-        <div class="agreement">
+        <div class="agreement" style="display: none;">
             <input name="agreement" class="required-entry validation-passed" type="checkbox" id="agreement" checked="checked">
             <label for="agreement">我已看过并同意《方太官方商城网络服务使用协议》</label>
         </div>
@@ -101,25 +101,26 @@
     </script>
 </div>
 <script type="text/javascript">
-    jQuery(function(){
-        var userName=jQuery('#username');
-        var coverEmail=jQuery('#coverEmail');
-        var email=jQuery('#email_address');
-        var realEmail=email.val();
-         var re = /^[0-9]+.?[0-9]*$/;
-        coverEmail.blur(function(){
-            var user=(coverEmail.val().indexOf("@"));
-            email.attr("value",coverEmail.val())
-            if(coverEmail.val().match(re)){
-                email.attr("value",coverEmail.val()+"@fotile.com");
-                userName.val(coverEmail.val());
-            }else if(user){
-        userName.val(coverEmail.val().substring(0,user));
+/*jQuery(function(){
+    var userName=jQuery('#username');
+    var coverEmail=jQuery('#coverEmail');
+    var email=jQuery('#email_address');
+    var realEmail=email.val();
+    var re = /^[0-9]+.?[0-9]*$/;
+    coverEmail.blur(function(){
+        var user=(coverEmail.val().indexOf("@"));
+        email.attr("value",coverEmail.val())
+        if(coverEmail.val().match(re)){
+            email.attr("value",coverEmail.val()+"@fotile.com");
+            userName.val(coverEmail.val());
+        }else if(user){
+            userName.val(coverEmail.val().substring(0,user));
         }else{
             userName.val(coverEmail.val());
         }
         jQuery('#firstname').val(userName.val().substring(0,1));
         jQuery('#lastname').val(userName.val().substring(1,userName.val().length));
-        })
     })
+})
+*/
 </script>

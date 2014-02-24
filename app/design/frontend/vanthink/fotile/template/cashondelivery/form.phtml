@@ -32,9 +32,9 @@ if ($this->helper('cashondelivery')->displayCodBothPrices() && ($_extra_fee_incl
 ?>
 <?php if($this->getMethod()->getCustomText() || $_extra_fee || Mage::getStoreConfig('payment/cashondelivery/display_zero_fee')): ?>
 <fieldset class="form-list">
-	<ul id="payment_form_<?php echo $_code ?>" style="display:none;">
+	<ul id="payment_form_<?php echo $_code ?>">
         <?php if($_extra_fee || Mage::getStoreConfig('payment/cashondelivery/display_zero_fee')): ?>
-		<li class="base-info"><?php echo $this->__('You will be charged an extra fee of %s.', $_codFeeStr) ?></li>
+		<li class='base-info'><?php echo $this->__('You will be charged an extra fee of %s.', $_codFeeStr) ?></li>
         <?php endif; ?>
 		<?php if ($this->getMethod()->getCustomText()): ?>
 		<li>

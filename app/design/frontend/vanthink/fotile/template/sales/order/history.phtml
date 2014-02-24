@@ -67,6 +67,8 @@
                   <a class="red_bg" onclick="this.target='_blank'" href="<?php echo $this->getUrl('alipay/payment/pay').'?orderid='.$_order->getRealOrderId(); ?>">支付</a>
                 <?php elseif($paymentmethod=='tenpay_payment'): ?>
                   <a class="red_bg" onclick="this.target='_blank'" href="<?php echo $this->getUrl('tenpay/payment/pay').'?orderid='.$_order->getRealOrderId(); ?>">支付</a>
+                <?php elseif($paymentmethod=='unionpay_payment'): ?>
+                  <a class="red_bg" onclick="this.target='_blank'" href="<?php echo $this->getUrl('unionpay/payment/redirect').'?orderid='.$_order->getRealOrderId(); ?>">支付</a>
                 <?php endif; ?>
               <?php elseif($_order->getStatus()=='alipay_wait_buyer_pay'): ?>
                 <a class="red_bg" onclick="this.target='_blank'" href=" https://www.alipay.com/user/login.htm">支付</a>

@@ -229,6 +229,7 @@ Customer account home dashboard layout
         <reference name="my.account.wrapper">
             <block type="customer/account_dashboard" name="customer_account_dashboard" template="customer/account/dashboard.phtml">
                 <block type="customer/account_dashboard_hello" name="customer_account_dashboard_hello" as="hello" template="customer/account/dashboard/hello.phtml"/>
+                <block type="rewards/customer_summary" name="customer.summary" as="summary"/>
                 <block type="core/template" name="customer_account_dashboard_top" as="top" />
                 <!-- add by wangxianbin@vanthink.net -->
                 <block type="sales/order_complete" name="customer_account_dashboard_complete" template="sales/order/complete.phtml"/>

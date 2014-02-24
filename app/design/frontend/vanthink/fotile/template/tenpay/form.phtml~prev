@@ -17,11 +17,12 @@
  * @copyright  Copyright (c) 2011 LuoChunhui (http://www.luochunhui.com)
  *
  */
+ Mage::log('hello world');
 ?>
 <fieldset class="form-list">
 	<?php $_code=$this->getMethodCode() ?>
 	<ul id="payment_form_<?php echo $_code ?>">
-			<div class="img"><img  border="0"  alt="财付通" src="<?php echo $this->getSkinUrl('images/caifutong.png');?>"/></div>
+			<div class="img"><img  border="0"  alt="财付通" src="<?php echo $this->getSkinUrl('images/alipay.gif');?>"/></div>
 
 		<div style="clear:both;">
 			<?php echo $this->__('下单后会转向财付通网站，按财付通的提示支付款项到商家的财付通账户') ?>

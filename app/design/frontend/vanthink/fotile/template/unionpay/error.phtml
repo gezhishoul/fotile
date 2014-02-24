@@ -13,24 +13,15 @@
  * to license@magentocommerce.com so we can send you a copy immediately.
  *
  * @category	CosmoCommerce
- * @package 	CosmoCommerce_Alipay
- * @copyright	Copyright (c) 2009 CosmoCommerce,LLC. (http://www.cosmocommerce.com)
+ * @package 	CosmoCommerce_Unionpay
+ * @copyright	Copyright (c) 2009-2013 CosmoCommerce,LLC. (http://www.cosmocommerce.com)
  * @contact :
  * T: +86-021-66346672
  * L: Shanghai,China
  * M:sales@cosmocommerce.com
  */
 ?>
-
-
-
-<fieldset class="form-divst">
-	<?php $_code=$this->getMethodCode() ?>
-	<ul id="payment_form_<?php echo $_code ?>">
-			<div class="img"><img  border="0"  alt="支付宝" src="<?php echo $this->getSkinUrl('images/alipay.gif');?>"/></div>
-
-		<div style="clear:both;">
-			<?php echo $this->__('下单后会转向支付宝网站，按支付宝的提示支付款项到商家的支付宝账户') ?>
-		</div>
-	</ul>
-</fieldset>
+<div class="page-head">
+    <h3><?php echo $this->__('Error occured') ?></h3>
+</div>
+<p><?php echo $this->__('There was an error occurred during paying process.') ?></p>

@@ -1,0 +1,128 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php $couponCode = $this->getCouponCode();?>
+<?php Mage::getSingleton('customer/session')->setBeforeAuthUrl($this->getRequest()->getRequestUri());?>
+<form id="discount-coupon-form" action="<?php echo $this->getUrl('checkout/cart/couponPost') ?>" method="post">
+    <div class="discount">
+        <div class="discount-form">
+            <label for="coupon_code">使用优惠券：</label>
+            <input type="hidden" name="remove" id="remove-coupone" value="0" />
+            <div class="input-box">
+                <input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($couponCode) ?>" placeholder="输入或者选择优惠券号..." />
+            </div>
+            <div class="buttons-set">
+                <button type="button" title="<?php echo $this->__('Apply Coupon') ?>" class="button" onclick="discountForm.submit(false)" value="使用"><span><span>使用</span></span></button>
+                <?php if(strlen($this->getCouponCode())): ?>
+                    <button type="button" title="<?php echo $this->__('Cancel Coupon') ?>" class="button qx_btn" onclick="discountForm.submit(true)" value="取消"><span><span>取消</span></span></button>
+                <?php endif;?>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<?php if(!Mage::getSingleton('customer/session')->isLoggedIn()):?>
+  <div class="inline-message"><span class="icon warning"></span>请<a href="/customer/account/login">登录</a>查看您的优惠券</div>
+<?php else: ?>
+<?php 
+$customerId =  Mage::getSingleton('customer/session')->getCustomer()->getId();
+$coupons = Mage::getResourceModel('coupon/coupon_collection')->addFieldToFilter('yonghu', $customerId);
+?>
+<?php if (count($coupons) && empty($couponCode)): ?>
+  <div class="coupons list">
+    <div class="tips"><i class="close"></i>有<span><?php echo count($coupons)?></span>张可用优惠券</div>
+    <table class="">
+      <thead>
+        <tr>
+          <th>优惠券代码<span class="gray">（复制代码）</span></th>          
+          <th>优惠券内容</th>
+          <th>优惠券有效时间</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach($coupons as $coupon):?>
+          <?php
+          $rule = Mage::getModel('salesrule/rule')
+                        ->getResourceCollection()
+                        ->addFieldToFilter('code', $coupon->getGuizeihao())
+                                                          ->getFirstItem();
+          // echo var_export($rule->getName());
+          // echo var_export(date("Y-m-d"));
+
+          if(!$rule->getName() || ($rule['to_date'] && $rule['to_date']<date("Y-m-d"))){
+            $coupon = Mage::getModel('coupon/coupon')->load($coupon->getYouhuiquanhao());
+            $coupon->setZhuangtai(1);
+            $coupon->save();
+          }
+          //  $rules = $collection->getData();
+          ?>
+          <tr class="w_yhq_xinxi">
+            <!--<td><?php echo $coupon->getJine();?></td>-->
+            <td class="num first"><?php echo $coupon->getYouhuiquanhao();?></td>
+            <td class="yhq_last"><?php echo $rule['name'];?><div class="update-message"></div></td>
+            <td class="last"><?php echo $rule['to_date'];?></td>
+          </tr>
+        <?php endforeach;?>
+      </tbody>
+    </table>
+  </div>
+<?php endif; ?>
+<?php endif; ?>
+
+<script type="text/javascript">
+//<![CDATA[
+ var discountForm = new VarienForm('discount-coupon-form');
+ discountForm.submit = function (isRemove) {
+   if (isRemove) {
+     $('coupon_code').removeClassName('required-entry');
+     $('remove-coupone').value = "1";
+   } else {
+     $('coupon_code').addClassName('required-entry');
+     $('remove-coupone').value = "0";
+   }
+   return VarienForm.prototype.submit.bind(discountForm)();
+ }
+
+ jQuery('.w_yhq_xinxi').click(function() {
+   var code = jQuery(this).find('.num').html();
+   jQuery('#coupon_code').val(code);
+   jQuery(this).find('.update-message').html( '正在更新...');
+   discountForm.submit(false);
+ });
+
+ jQuery('.tips').click(function() {
+   if (jQuery(this).find('i').hasClass('close')) {
+     jQuery(this).siblings('table').hide();
+     jQuery(this).find('i').removeClass('close');
+   }
+   else {
+     jQuery(this).find('i').addClass('close');
+     jQuery(this).siblings('table').show();
+   }
+ });
+//]]>
+</script>

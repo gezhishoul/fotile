@@ -64,13 +64,14 @@
             <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
                 <thead>
                     <tr>
-                        <th width="140" rowspan="<?php echo $mergedCells; ?>" class="a-center">删除</th>
+                        <th width="80" rowspan="<?php echo $mergedCells; ?>" class="a-center">删除</th>
                         <th width="140" rowspan="<?php echo $mergedCells; ?>">图片</th>
                         <th width="140" rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Product Name') ?></span></th>
-                        <th width="140" class="a-center" colspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Unit Price') ?></span></th>
+                        <th width="80" class="a-center" colspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Unit Price') ?></span></th>
                         <th width="140" rowspan="<?php echo $mergedCells; ?>" class="a-center"><?php echo $this->__('Qty') ?></th>
 
-                        <th width="140" class="a-center" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Subtotal') ?></th>
+                        <th width="140" class="a-center" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Point') ?></th>
+                        <th width="90" class="a-center" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Subtotal') ?></th>
                        
                     </tr>
                     <?php if ($this->helper('tax')->displayCartBothPrices()): ?>

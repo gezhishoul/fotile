@@ -36,11 +36,11 @@
 $helper = Mage::helper('onestepcheckout/checkout');
 $hide_nonfree_methods = false;
 if($helper->settings['hide_nonfree_payment_methods'])   {
-    foreach($this->getMethods() as $_method)    {
-        if($_method->getCode() == 'free')   {
-            $hide_nonfree_methods = true;
-        }
+  foreach($this->getMethods() as $_method)    {
+    if($_method->getCode() == 'free')   {
+      $hide_nonfree_methods = true;
     }
+  }
 }
 
 
@@ -48,65 +48,73 @@ if($helper->settings['hide_nonfree_payment_methods'])   {
 
 <div class="payment-methods">
 
-<script type="text/javascript">
+  <script type="text/javascript">
 //<![CDATA[
-  <?php echo $this->getChildHtml('reward.scripts'); ?>
-  <?php echo $this->getChildHtml('customerbalance_scripts'); ?>
-  var payment = new Payment('checkout-payment-method-load', '<?php echo $this->getUrl('checkout/onepage/savePayment') ?>');
+<?php echo $this->getChildHtml('reward.scripts'); ?>
+<?php echo $this->getChildHtml('customerbalance_scripts'); ?>
+var payment = new Payment('checkout-payment-method-load', '<?php echo $this->getUrl('checkout/onepage/savePayment') ?>');
 //]]>
 </script>
-    <?php if(str_replace('.', '', Mage::getVersion()) > 1600):?>
-        <?php echo $this->getChildHtml('customerbalance'); ?>
-        <?php echo $this->getChildHtml('reward.points'); ?>
-    <?php endif;?>
-    <style type="text/css">
+<?php if(str_replace('.', '', Mage::getVersion()) > 1600):?>
+  <?php echo $this->getChildHtml('customerbalance'); ?>
+  <?php echo $this->getChildHtml('reward.points'); ?>
+<?php endif;?>
+<style type="text/css">
 #payment_form_<?php echo $this->getMethodCode()?> input {
-    vertical-align: top
+  vertical-align: top
 }
 #payment_form_<?php echo $this->getMethodCode()?> label{
-    float:none; margin-right:18px
+  float:none; margin-right:18px
 }
 </style>
 
 <fieldset class="form-list">
-  <ul id="payment_form cf">
+  <!-- <ul id="payment_form cf">
     <li>
-      <input checked='checked' name="payment[method]" type="radio" value="alipay_payment" id="p_method_alipay_payment"/><label for="p_method_alipay_payment">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/aliPayment.png') ?>"  alt="支付宝" /></label></li>
-<!--     <li>
-      <div style="display:none;">
-        <input type="radio" title="财付通" name="payment[method]" value="tenpay_payment" id="p_method_tenpay_payment_ten" checked='checked' />
-      </div>
-      <input name="payment[bank_type]" type="radio" value="tenpay_payment" checked='checked'  /><label for="p_method_tenpay_payment_ten">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/tencentPayment.png') ?>"  alt="财付通" /></label> </li>
-    <li>
-      <input name="payment[bank_type]" type="radio" value="1001" id="btn_1001"  /><label for="btn_1001">&nbsp;<img  src="<?php echo $this->getSkinUrl('images/tenpay/jianshe.png') ?>"  /></label>
+      <input checked='checked' name="payment[method]" type="radio" value="alipay_payment" id="p_method_alipay_payment"/><label for="p_method_alipay_payment">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/aliPayment.png') ?>"  alt="支付宝" /></label>
     </li>
     <li>
-      <input name="payment[bank_type]" type="radio" value="1002" id="btn_1002"  /><label for="btn_1002">&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/nongye.png') ?>" /></label>
+      <input id="p_method_cashondelivery" value="cashondelivery" type="radio" name="payment[method]" title="货到付款" class="radio" />
+      <label for="p_method_cashondelivery">银行转账</label>
     </li>
-    <li>
-          
-      <input name="payment[bank_type]" type="radio" value="1003" id="btn_1003"  /><label for="btn_1003">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/gongshang.png') ?>" /></label>
-    </li>
-    <li>
-      <input name="payment[bank_type]" type="radio" value="1005" id="btn_1005"  /><label for="btn_1005">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/guangda.png') ?>" /></label>
-    </li>
-    <li>
-      <input name="payment[bank_type]" type="radio" value="1032" id="btn_1032"  /><label for="btn_1032">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/zhaoshang.png') ?>" /></label>
-    </li>
-    <li>
-      <input name="payment[bank_type]" type="radio" value="1022" id="btn_1022"  /><label for="btn_1022">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/minsheng.png') ?>" /></label>
-    </li>
-    <li>
-      <input name="payment[bank_type]" type="radio" value="1052" id="btn_1052"  /><label for="btn_1052">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/jiaotong.png') ?>" /></label>
-    </li>
-    <li>
-      <input name="payment[bank_type]" type="radio" value="1020" id="btn_1020" /><label for="btn_1020">&nbsp;&nbsp;<img src="<?php echo $this->getSkinUrl('images/tenpay/pufa.png') ?>" /></label> 
-    </li>
-          
-      -->     
-          
-          
-  </ul>
+  </ul>-->
+  <dl id="checkout-payment-method-load">
+    <?php foreach ($this->getMethods() as $_method): $_code = $_method->getCode() ?>
+        <?php if (Mage::getSingleton('core/session')->getAlipayName()): ?>
+            <?php if ($_method->getCode() == 'alipay_payment'): ?>
+                <?php if($hide_nonfree_methods && $_code != 'free') continue; ?>
+                <dt>
+                <?php if( sizeof($this->getMethods()) > 1 ): ?>
+                    <input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" title="<?php echo $this->htmlEscape($_method->getTitle()) ?>" class="radio" <?php if($this->getSelectedMethodCode()==$_code || ($hide_nonfree_methods && $_code == 'free')): ?> checked="checked"<?php endif; ?> />
+                <?php else: ?>
+                    <span class="no-display"><input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" checked="checked" /></span>
+                <?php endif; ?>
+                    <label for="p_method_<?php echo $_code ?>"><?php echo $_method->getTitle() ?></label>
+                </dt>
+                <?php if($html = $this->getChildHtml('payment.method.'.$_code)): ?>
+                <dd id="container_payment_method_<?php echo $_code; ?>" class="payment-method">
+                    <?php echo $html; ?>
+                </dd>
+                <?php endif; ?>
+            <?php endif; ?>
+        <?php else: ?>
+            <?php if($hide_nonfree_methods && $_code != 'free') continue; ?>
+            <dt>
+            <?php if( sizeof($this->getMethods()) > 1 ): ?>
+                <input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" title="<?php echo $this->htmlEscape($_method->getTitle()) ?>" class="radio" <?php if($this->getSelectedMethodCode()==$_code || ($hide_nonfree_methods && $_code == 'free')): ?> checked="checked"<?php endif; ?> />
+            <?php else: ?>
+                <span class="no-display"><input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" checked="checked" /></span>
+            <?php endif; ?>
+                <label for="p_method_<?php echo $_code ?>"><?php echo $_method->getTitle() ?></label>
+            </dt>
+            <?php if($html = $this->getChildHtml('payment.method.'.$_code)): ?>
+            <dd id="container_payment_method_<?php echo $_code; ?>" class="payment-method">
+                <?php echo $html; ?>
+            </dd>
+            <?php endif; ?>
+        <?php endif; ?>
+    <?php endforeach; ?>
+    </dl>
 </fieldset>
 </div>
 <script type="text/javascript">
@@ -114,21 +122,21 @@ if($helper->settings['hide_nonfree_payment_methods'])   {
 var checkout = new Checkout();
 $$('#checkout-payment-method-load dt input').invoke('observe', 'click', function(e) {
 
-    var element = e.element();
-    var name = 'payment_form_' + element.getValue();
-    payment.currentMethod = element.getValue();
-    /* Hide all other forms */
-    $$('dd.payment-method').invoke('hide');
+  var element = e.element();
+  var name = 'payment_form_' + element.getValue();
+  payment.currentMethod = element.getValue();
+  /* Hide all other forms */
+  $$('dd.payment-method').invoke('hide');
 
-    if(element.checked) {
-        var form = $(name);
-        var container = $('container_payment_method_' + element.getValue());
+  if(element.checked) {
+    var form = $(name);
+    var container = $('container_payment_method_' + element.getValue());
 
-        if(element !== null && container !== null)    {
-            container.show();
-            $(name).show();
-        }
+    if(element !== null && container !== null)    {
+      container.show();
+      $(name).show();
     }
+  }
 });
 
 <?php if(Mage::helper('onestepcheckout')->isEnterprise() && Mage::helper('customer')->isLoggedIn()):?>
@@ -136,15 +144,15 @@ $$('#checkout-payment-method-load dt input').invoke('observe', 'click', function
 
 rPoints = $('use_reward_points');
 if(rPoints){
-    if(rPoints.checked){
-        payment.switchRewardPointsCheckbox();
-    }
+  if(rPoints.checked){
+    payment.switchRewardPointsCheckbox();
+  }
 }
 cBalance = $('use_customer_balance');
 if(cBalance){
-    if(cBalance.checked){
-        payment.switchCustomerBalanceCheckbox();
-    }
+  if(cBalance.checked){
+    payment.switchCustomerBalanceCheckbox();
+  }
 }
 //if we have a enterprise version we should include this end
 <?php endif;?>
@@ -152,21 +160,21 @@ if(cBalance){
 payment.currentMethod = "<?php echo $this->getQuote()->getPayment()->getMethod() ?>";
 //]]>
 jQuery(function(){
-    var aliten=jQuery('.form-list li');
-    var tencentAll=jQuery('.form-list li').not(':first');
-    var tencent=jQuery('.form-list li').eq(1).children('div').children('input');
-    var tencentSecond=jQuery('.form-list li').eq(1);
-    tencentAll.click(function(){ 
-        tencent.attr('checked','checked');
-    })
-    var tencentFirst=jQuery('.form-list li').eq(0);
-    tencentFirst.click(function(){
+  var aliten=jQuery('.form-list li');
+  var tencentAll=jQuery('.form-list li').not(':first');
+  var tencent=jQuery('.form-list li').eq(1).children('div').children('input');
+  var tencentSecond=jQuery('.form-list li').eq(1);
+  tencentAll.click(function(){ 
+    tencent.attr('checked','checked');
+  })
+  var tencentFirst=jQuery('.form-list li').eq(0);
+  tencentFirst.click(function(){
     tencentAll.find('input').attr('checked',false);
-    })
-    
-    tencentSecond.click(function(){
-        tencentSecond.find('input').attr('checked','checked');
-    })
+  })
+
+  tencentSecond.click(function(){
+    tencentSecond.find('input').attr('checked','checked');
+  })
 })
 </script>
 <!--[if IE]>
@@ -178,4 +186,4 @@ jQuery(function(){
     })
     })
  </script>
-<![endif]-->
+ <![endif]-->
