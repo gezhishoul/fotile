@@ -108,6 +108,7 @@ class Fanxiang_Coupon_Adminhtml_CouponController extends Mage_Adminhtml_Controll
   {
       $customers =  $this->getRequest()->getPost('customer');
       $count = count($customers);
+
       $coupontypes = $this->getRequest()->getPost('coupontypes');
       $collection = Mage::getResourceModel('coupon/coupon_collection')
                     ->addFieldToFilter('zhuangtai', 2)
@@ -117,20 +118,17 @@ class Fanxiang_Coupon_Adminhtml_CouponController extends Mage_Adminhtml_Controll
                     ->setPageSize($count)->setCurPage(1);
       $i=0;              
       foreach($collection as $coupon){
-         $youhuiquanhao =  $coupon->getYouhuiquanhao();
-         $coupon = Mage::getModel('coupon/coupon')->load($youhuiquanhao); 
-         $coupon->setYonghu($customers[$i]);
-         $coupon->save();
-         $i++;
-           var_export($coupon->getYouhuiquanhao()); 
-      }              
-      
-
-     $this->_redirect('*/*/index');
-
+          $youhuiquanhao =  $coupon->getYouhuiquanhao();
+          $coupon = Mage::getModel('coupon/coupon')->load($youhuiquanhao); 
+          $coupon->setYonghu($customers[$i]);
+          $coupon->save();
+          $i++;
+          var_export($coupon->getYouhuiquanhao());
+      }
+      $message = "选中了{$count}用户\n指定的类型ID为{$coupontypes}\n优惠券指定用户成功{$i}条\n";
+      Mage::getSingleton('adminhtml/session')->addSuccess($message);
+      $this->_redirect('*/*/index');
   }
-  
-  
   
   function randomkeys($length)
   {

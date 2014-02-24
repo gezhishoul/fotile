@@ -123,7 +123,7 @@ em,address{
     font-weight: 600;
 }
 .micya{
-    font-family: "Microsoft YaHei","微软雅黑";
+    font-family: "Microsoft YaHei";
 }
 article{
     background: #000;
@@ -264,22 +264,24 @@ header {
     bottom: 2px;
 }
 nav{
-    width: 1020px;
-    margin: 16px auto 0 auto;
+    height: 38px;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #323639;
+    margin-top: 3px;
+    background: #0c0c0c url(../images/nav-bg.jpg) 0 0 no-repeat;
 }
 .nav{
-    height: 24px;
     z-index: 9;
+    width: 1000px;
+    margin: 0 auto;
 }
 .nav li{
     float: left;
-    height: 24px;
-    line-height: 21px;
 }
 
 nav .nav li a{
     background-image: url(../images/nav.jpg);
-    height: 26px;
+    height: 38px;
     display: block;
     text-indent: -9999px;
     background-repeat:no-repeat;
@@ -287,9 +289,6 @@ nav .nav li a{
 nav .nav-first a{
     width: 79px;
     background-position:0px 0px;
-}
-.nav-first a:hover{
-    background-position:0px -34px;
 }
 .words3 a{
     width: 60px;
@@ -301,91 +300,60 @@ nav .nav-first a{
     width: 77px;
     background-position: -79px 0px;
 }
-.nav2 a:hover{
-    background-position: -79px -34px;
-}
 .nav3 a{
     width: 86px;
     background-position: -156px 0px;
 }
-.nav3 a:hover{
-    background-position: -156px -34px;
-}
 .nav4 a{
-    width: 73px;
+    width: 55px;
     background-position: -242px 0px;
 }
-.nav4 a:hover{
-    background-position: -242px -34px;
-}
 .nav5 a{
-    width: 69px;
-    background-position: -315px 0px;
-}
-.nav5 a:hover{
-    background-position: -315px -34px;
+    width: 80px;
+    background-position: -297px 0px;
 }
 .nav6 a{
     width: 70px;
-    background-position: -384px 0px;
-}
-.nav6 a:hover{
-    background-position: -384px -34px;
+    background-position: -377px 0px;
 }
 .nav7 a{
-    width: 86px;
-    background-position: -454px 0px;
-}
-.nav7 a:hover{
-    background-position: -454px -34px;
+    width: 65px;
+    background-position: -447px 0px;
 }
 .nav8 a{
-    background-position: -540px 0px;
-}
-.nav8 a:hover{
-    background-position: -540px -34px;
+    width: 65px;
+    background-position: -512px 0px;
 }
 .nav9 a{
-    width:80px;
-    background-position: -600px 0px;
-}
-.nav9 a:hover{
-    background-position: -600px -34px;
+    width: 70px;
+    background-position: -577px 0px;
 }
 .nav10 a{
-    width: 95px;
-    background-position: -680px 0px;
+    width: 80px;
+    background-position: -717px 0px;
 }
-.nav10 a:hover{
-    background-position: -680px -34px;
+.nav10  {
+    margin-left: 70px;
 }
 .nav11 a{
-    width: 75px;
-    background-position: -780px 0px;
-}
-.nav11 a:hover{
-    background-position: -780px -34px;
+    width: 88px;
+    background-position: -797px 0px;
 }
 .nav12 a{
-    width: 80px;
-    background-position: -850px 0px;
-}
-.nav12 a:hover{
-    background-position: -850px -34px;
+    width: 95px;
+    background-position: -885px 0px;
 }
 .nav13 a{
+    display: none;
     width: 90px;
     background-position: -930px 0px;
-}
-.nav13 a:hover{
-    background-position: -930px -34px;
 }
 
 .nav li .drop-down{
     display: none;
     position: absolute;
     left: -52px;
-    top: 34px;
+    top: 42px;
     width: 960px;
     height: 210px;
     background: url(../images/drop-down.gif) no-repeat;
@@ -530,44 +498,48 @@ nav .nav-first a{
     float: left;
 }
 footer{
-    width: 1022px;
-    height: 441px;
+    height: 390px;
     margin: 0 auto;
     background: #fff url(../images/foot-back.gif) center 0 no-repeat;
-    box-shadow: 10px 14px 20px #959595,-10px 14px 20px #959595
 }
 .attention{
    margin-right: 38px;
    _margin-right: 19px;
 }
 .cms-home footer{
-    box-shadow: none;
+    width: 930px;
+    box-shadow: 0px 0px 30px #dadada;
 }
 
+footer{ 
+    width: 1028px;
+    box-shadow: 10px 14px 20px #cdcdcd,-10px 14px 20px #cdcdcd;
+}
 #footer{
     width: 1002px;
     margin: 10px auto;
 }
 .foot-service{
-    padding: 0 40px;
+    width: 826px;
+    padding: 0 52px;
+    margin: 0 auto;
 }
 .foot-service .nav-list{
     overflow: hidden;
-    margin-top: 105px;
+    margin-top: 70px;
 }
 .foot-service .nav-list li {
-    width: 114px;
     text-align: center;
     float: left;
-}
-.foot-service .nav-list li.first {
-    width: 60px;
+    margin-right: 65px;
 }
 .foot-service .nav-list li.last {
-    width: 80px;
+    margin-right: 0;
 }
 .foot-service .nav-list li a {
     color: #d5d5d5;
+    font-family: "Microsoft YaHei";
+    _white-space: nowrap;
 }
 footer a,footer span{
     color: #8b8b8b;
@@ -578,91 +550,69 @@ footer a,footer span{
     background: url(../images/footer-serivce.gif) no-repeat right 3px;
 }
 .foot-nav{
+    width: 897px;
     overflow: hidden;
     padding: 16px 0 0 33px;
-    margin-top: 135px;
+    margin: 75px auto 25px;
 }
 .foot-nav ul {
     overflow: hidden;
 }
 .foot-nav li{
     float: left;
-    width: 255px;
-    margin-right: 24px;
+    width: 245px;
+    margin: 0 19px 0 22px;
     color: #8d8d8d;
+    _display: inline;
 }
-.foot-nav li.writ {
-    width: 190px;
-}
-.foot-nav li.house {
-    width: 150px;
-    margin: 0;
-}
-.foot-nav li.house a{
-    background: url(../images/foot-house.jpg) 0 -34px no-repeat;
-    width: 150px;
-    height: 32px;
-    margin-bottom: 15px;
-    text-indent: -9999em;
-    overflow: hidden;
+.foot-nav li a {
     display: block;
 }
-.foot-nav li.house a.collection {
-    background-position: 0 0;
-    margin-top: 65px;
-}
 .foot-nav li h3{
+    font-weight: normal;
     color: #ddd;
     font-size: 14px;
     margin-bottom: 8px;
 }
-/*
-.foot-nav a{
-    margin: 0 4px;
-    float: left;
-}
-.foot-nav b{
-    color: #3d3d3d;
-    float: left;
-    margin-right: 2px;
-    font-style: normal;
-}
-.foot-nav span{
-    float: right;
-    margin-right: 38px;
-}
-.foot-nav span b{
-    float: none;
-}
-.foot-nav span a{
-    color: #f08200;
-    cursor: default;
-    float: none;
-}*/
 .foot-info{
     width: 600px;
     margin-top: 6px;
     padding-left: 10px;
 }
-.back-to{
-    display: none;
-    width:46px;
-    height: 46px;
-    overflow:hidden;
+.touch {
+    width: 62px;
+    height: 152px;
     position: fixed;
-    bottom: 8%;
+    bottom: 10%;
     z-index:99;
     right:4%;
-    cursor:pointer;
-    background-image: url(../images/back-top.gif);
-    background-position: 0 0;
-    background-repeat: no-repeat;
     _position:absolute;
     _bottom:auto;
     _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-130));
 }
-.back-to:hover{
-    background-position: 0 -47px;
+.touch a {
+    display: block;
+    width:62px;
+    height: 76px;
+    background: url(../images/back-top.jpg) 0 -76px no-repeat;
+    cursor: pointer;
+}
+.touch .customer {
+    height: 75px;
+    background-position: 0 0;
+    position: relative;
+}
+.touch a.customer:hover span { 
+    display: block!important;
+}
+.touch .customer span {
+    display: none!important;
+    position: absolute;
+    background: url(../images/touch.jpg) 0 0 no-repeat;
+    display: block;
+    width: 191px;
+    height: 226px;
+    left: -191px;
 }
 .open-to{
     background: url(../images/toshow.png) no-repeat;
@@ -928,7 +878,7 @@ footer a,footer span{
 
 /*============hot-sale===========*/
 .cms-home .wrapper{
-    background:#525252;
+    background:#f3f3f3;
 }
 .sales{
     width: 1000px;
@@ -989,7 +939,7 @@ footer a,footer span{
     margin-top: 10px;
 }
 .messages li{
-    margin: 10px auto;
+    margin: 0 auto;
 }
 .error-msg, .success-msg, .note-msg, .notice-msg{
     background-position: 10px 14px !important;
@@ -1005,6 +955,10 @@ footer a,footer span{
     padding: 10px 40px;
     background-color: #e2e2e2;
     color: #f08200;
+}
+.success-msg {
+    color: #f08200;
+    border: 1px #ffead1 solid;
 }
 .error-msg{
     width: 866px;
@@ -1212,117 +1166,554 @@ footer a,footer span{
 .online-serivce-list .last { background: url(../images/online-service-right.png) no-repeat scroll 0 0; }
 
 .hot-box {
-    padding: 1px 1px 10px;
-    width: 1020px;
+    padding: 16px 0 0;
+    width: 930px;
     margin: 0 auto;
     background: #fff;
     overflow: hidden;
+    box-shadow: 0px 0px 30px #dadada;
+    position: relative;
+    z-index: 1;
 }
-.hot-title {
-    font: normal 20px/53px "Microsoft YaHei";   
-    color: #fff;
-    background: url(http://www.efotile.com/media//hd.jpg) 0 0 repeat-x;
-    text-indent: 22px;
-}
-.hot-content ul {
-    overflow: hidden;
-    margin-top: 10px;
-}
-.hot-content li {
-    float: left;
-    margin-left: 10px;
-    _display: inline;
-}
-.hot-content .img {
-    border: 1px solid #d8d8d8;
-    width: 240px;
-    height: 285px;
-    overflow: hidden;
-} 
-.hot-content .img a {
+img {
     display: block;
 }
-.hot-content .desc {
-    font-size: 12px;
-    padding: 6px 0 0 15px;
+.hot-box .groom  {
+    margin: 0 20px 20px;
+    border: 1px solid #bdbdbd;
+    padding: 27px 0 0;
+    border-radius: 3px;
+    height: 490px;
 }
-.hot-content .price {
-    padding-left: 60px;
-    background: url(http://www.efotile.com/media//icon.jpg) 0 12px no-repeat;
-    font: normal 30px tahoma;  
-    padding-bottom: 20px; 
-}
-.hot-content .num,.hot-content .name {
-    font-size: 18px;
-    font-family: "SimSun";
-}
-.hot-box .banner {
+.hot-box .groom .banner {
+    height: 180px;
+    width: 836px;
     margin: 0 auto;
-    width: 1006px;
     overflow: hidden;
-    line-height: 0;
+}
+.hot-box a {
+    display: block;
+}
+.hot-box .groom-list {
+    overflow: hidden;
+    margin: 13px auto;
+    width: 830px;
+}
+.hot-box .groom-list li {
+   float: left;
+}
+.hot-box .groom-list li img {
+    width: 415px;
+    height: 290px;
+}
+.zone {
+    margin: 15px auto 6px;
+    width: 900px;
+    overflow: hidden;
+}
+.hot-box .bg{
+    background: url(../images/hot-bg.jpg) 0 -15px repeat-x;
+    height: 13px;
+    width: 890px;
+    margin: 0 auto;
+}
+.zone .left {
+    float: left;
+    margin-right: 9px;
+    width: 155px;
+    overflow: hidden;
+}
+.zone .right {
+    margin-top: 7px;
+    float: left;
+    width: 730px;
+    border: 1px solid #bdbdbd;
+    border-radius: 3px;
+}
+.side  {
+    margin-bottom: 12px;
+}
+.side .right  {
+    margin-top: 2px;
+}
+.stoves {
+    margin: 6px 20px 13px 14px;
+}
+.stoves .right {
+    margin-top: 14px;
+}
+.heater {
+    margin: 7px 20px 16px 14px;
+    _padding-bottom: 16px;
+}
+.heater .right {
+    margin-top: 12px;
+}
+.zone .goods-list {
+    width: 675px;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 18px 0 10px;
+}
+.zone .goods-list .top a {
+    padding-bottom: 23px;
+}
+.zone .goods-list span {
+    border-top: 1px solid #e2e2e2;
+    display: block;
+    border-bottom: 1px solid #f6f6f6;
+    height: 0px;
+    overflow: hidden;
+}
+.zone .goods-list .border span { 
+    width: 200px;
+}
+.zone .goods-list .first span {
+    margin: 0 0 0 auto;
+}
+.side .goods-list {
+    padding: 12px 0 7px;
+} 
+.european .left img{
+    width: 155px;
+    height: 645px;
+}
+.european .right img {
+    width: 225px;
+    height: 250px;
+}
+.european .right li .img{
+    width: 225px;
+    height: 250px;
+    overflow: hidden;
+}
+.european .right .top img {
+    width: 225px;
+    height: 320px;
+}
+.european .right li .top {
+    width: 225px;
+    height: 344px;
+}
+.side .left img{
+    width: 155px;
+    height: 635px;
+}
+.side .right img{
+    width: 205px;
+    height: 250px;
+}
+.side .right li .img{
+    width: 205px;
+    height: 250px;
+    overflow: hidden;
+}
+.side .right li .top img{
+    width: 225px;
+    height: 330px;
+}
+.side .right li .top {
+    width: 225px;
+    height: 354px;
+}
+.zone .goods-list li img {
+    margin: 0 auto;
+}
+.stoves .goods-list {
+    padding: 13px 0 10px;
+} 
+.stoves .left img{
+    width: 155px;
+    height: 305px;
+}
+.stoves .right img{
+    width: 200px;
+    height: 260px;
+}
+.stoves .right li .img {
+    width: 200px;
+    height: 260px;
+    overflow: hidden;
+}
+.heater .goods-list {
+    padding: 20px 0 14px;
+}
+.heater .left img {
+    width: 155px;
+    height: 455px;
+}
+.heater .right img {
+    width: 225px;
+    height: 400px;
+}
+.heater .right  li .img{
+    width: 225px;
+    height: 400px;
+    overflow: hidden;
+}
+.zone .goods-list li{
+    float: left;
+    width: 225px;
+}
+.jshowoff-controls {
+    position: absolute;
+    top: 205px;
+    width: 100%;
+}
+.jshowoff-controls a {
+    background-image: url(../images/banner-button.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    display: block;
+    width: 52px;
+    height: 52px;
+    text-indent: -999em;
+    overflow: hidden;
+}
+.jshowoff-controls .jshowoff-prev {
+    left: 55px;
+    background-position: 0 -55px;
+}
+.jshowoff-controls a.jshowoff-prev:hover {
+    background-position: 0 -3px;
+}
+.jshowoff-controls .jshowoff-play {
+    display: none;
+}
+.jshowoff-controls .jshowoff-next {
+    right: 55px;
+    background-position: -53px -55px;
+}
+.jshowoff-controls a.jshowoff-next:hover {
+    right: 55px;
+    background-position: -53px -3px;
+}
+.jshowoff a {
+    display: block;
+}
+.jshowoff {
+    _top: -4px;
+}
+.jshowoff-slidelinks {
+    padding: 14px 0;
+    height: 5px;
+    background: url(../images/slidelinks.png) 0 0 repeat-x;
+    position: absolute;
+    bottom: 0px;
+    z-index: 25;
+    width: 100%;
+}
+.jshowoff-slidelinks a{
+    float: left;
+    width: 50px;
+    height: 5px;
+    margin-right: 5px;
+    text-indent: -999em;
+    overflow: hidden;
+    background: url(../images/banner-button.png) -119px -3px no-repeat;
+}
+.jshowoff-slidelink-0 {
+    margin-left: 40%;
+    _margin-left: 20%;
+}
+.jshowoff-slidelinks .jshowoff-active {
+    background-position: -119px -16px;
+}
+.fixed {
+    position: fixed;
+    top: 300px;
+    right: 5px;
+    _position: absolute;
+    _bottom: auto;
+    _top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-325));
+}
+
+/*onestepcheckout*/
+#onestepcheckout-login-link  img {
+    display: inline;
+}
+#s_method_freeshipping_freeshipping,input.radio {
+    box-shadow: none;
+}
+#id_create_account,#payment_form_cashondelivery .base-info {
+    display: none;
+}
+#payment_form_cashondelivery li {
+    float: none;
+    height: auto;
+    margin-left: 25px;
+}
+.productUp .media-box {
+    width: 485px;
+}
+.copyright {
+    width: 826px;
+    padding: 0 52px;
+    margin: 0 auto;
+    color: #d5d5d5;
+    font-family: "Microsoft YaHei";
+    text-align: center;
+}
+.mypoints-transfers-earnings {
+    clear: both;
+}
+#shopping-cart-table {
+    width: 949px!important;
+}
+#shopping-cart-totals-table .disin {
+    display: block!important;
+}
+#shopping-cart-totals-table {
+    line-height: 2.2;
+    padding: 10px 0;
+}
+#shopping-cart-totals-table span.price {
+    padding-right: 30px;
+}
+#shopping-cart-totals-table li span.price {
+    padding: 0;
+}
+#shopping-cart-table img,#shopping-cart-totals-table .caption {
+    display: inline;
+}
+.current-group {line-height: 30px;}
+.mypoints-transfers-earnings {
+    margin: 0!important;
+}
+#button_send_to_friend {
+    color: #000!important;
+}
+.mypoints-redeemcatalog,.mypoints-sendfriend {
+    height: 100%!important;
+}
+
+.rewards-mini-icon-holder img {
+    width: 24px;
+    height: 24px;
+}
+#checkout-payment-method-load {
+    border: 0!important;
+    padding-left: 40px!important;
+    overflow: hidden;
+}
+#checkout-payment-method-load label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+#checkout-payment-method-load dl {
+    float: left;
+    padding: 10px;
+    border: 1px dashed #dbdbd9;
+    margin-right: 20px;
+    width: 190px;
+    cursor: pointer;
+}
+#checkout-payment-method-load dl.active {
+    background: #f4f2f3;
+    border-style: solid;
+}
+#payment_form_alipay_payment img {
+    width: 100%;
+}
+#payment_form_alipay_payment .img {
+    padding: 10px 0 10px;
+}
+#checkout-payment-method-load dd {
+    height: 108px;
+}
+#checkout-payment-method-load  ul {
+    padding-left: 25px;
+}
+.onestepcheckout-numbers {
+    font-weight: bold;
+}
+.payment-methods li {
+    width: auto!important;
+    margin: 0;
+    line-height: 2.2;
+}
+#payment_form_cashondelivery li {
+    margin: 0;   
+}
+#billing_address_list label.required {
+  float: left;
+  height: 28px;
+  line-height: 28px;
+  float: left;
+  margin-right: 6px;
+  width: 136px;
+  font-size: 14px;
+  text-align: right;
+}
+#billing_address_list .fields .field {
+  float: left;
+  width: 280px;
+  margin: 0;
+}
+#billing_address_list .fields .input-box {
+  float: left;
+}
+#billing_address_list .fields .input-box label {
+    width: 60px;
+}
+#billing_address_list .beizhu {
+    display: block;
+    margin: 5px 0 0 142px;
+}
+.onestepcheckout-shipping-method .onestepcheckout-shipping-method-block {
+    padding: 10px 60px;
+}
+#product-options-wrapper dl {
+    overflow: hidden;
+}
+#product-options-wrapper dt {
+    float: left;
+    width: 35px;
+    text-align: right;
+}
+#product-options-wrapper dd {
+    float: left;
+}
+.basicAttr {
+    display: none;
+}
+#product-options-wrapper {
     position: relative;
 }
-.hot-box .banner a{
-    position: absolute;
-    right: 340px;
-    bottom: 34px;
-    background: #9f714f;
-    font: normal 15px/30px "SimHei";
-    display: block;
-    width: 125px;
-    overflow: hidden;
-    text-align: center;
-    color: #000;
-}
-.hot-box .banner .enter-left{
-    left: 340px;
-}
-.std-content {
-    line-height: 0;
+#product-options-wrapper dd ul {
     overflow: hidden;
 }
-
-
-.jshowoff-1-slidelinks {
+#product-options-wrapper p.required {
     position: absolute;
-    top: 150px;
+    top: 10px;
+    right: 10px;
+}
+.discount-form {
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+.discount-form label {
+    float: left;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #f28202;
+}
+.discount-form .input-box {
+    float: left;
+    border: 1px solid #ffdeb5;
+}
+.discount-form .input-box input {
+    width: 260px;
+    padding: 4px;
+    box-shadow: none;
+    border: 0;
+}
+#discount-coupon-form .discount-form  {
+    width: 700px;
+}
+#discount-coupon-form .discount {
     width: 100%;
-    display: none;
 }
-.jshowoff-1-slidelinks .jshowoff-slidelink-0 {
-    display: block;
-    width: 30px;
-    height: 103px;
-    top: 0px;
-    left: 0px;
-    background: url(../images/banner-prev.png) no-repeat;
-    font: 0/0 a;
-    color: transparent;
-    text-shadow: none;
-    background-color: transparent;
-    border: 0;
-    margin: 0;
-    border: 0 none;
+.discount .discount-form  .buttons-set {
+    margin: 5px 0 0 10px;
+    float: left;
+}
+.discount-form .buttons-set button {
+    background: url(../images/shiyong.png) 0 0 no-repeat;
+    width: 63px;
+    height: 25px;
+    padding: 0;
+}
+.inline-message {
+    padding: 0 5px 0 34px;
+    background: #fce5c9 url(../images/warm.png) 10px 8px no-repeat;
+}
+.inline-message,.coupons .tips {
+    font: bold 14px/34px "simsum";
+    color: #333;
+    width: 411px;
+}
+.inline-message a {
+    color: #f28202;
+}
+.coupons .tips span{
+    padding: 0 5px;
+    color: #d60606;
+    font-family: "Microsoft YaHei","Verdana";
+}
+.coupons .tips {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 24px;
     cursor: pointer;
 }
-.jshowoff-1-slidelinks .jshowoff-slidelink-1 {
-    display: none;
+.coupons table td {
+    font-size: 12px;
+    padding: 0 10px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #fff;
+    line-height: 30px;
+    color: #666;
 }
-.jshowoff-1-slidelinks .jshowoff-slidelink-2 {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    display: block;
-    width: 30px;
-    height: 103px;
-    background: url(../images/banner-next.png) no-repeat;
-    font: 0/0 a;
-    color: transparent;
-    text-shadow: none;
-    background-color: transparent;
-    border: 0;
-    margin: 0;
-    border: 0 none;
+.coupons table {
+    border-bottom: 1px solid #e0e0e0;
+    border-collapse: inherit;
+}
+.coupons table td.first {
+    border-left: 1px solid #e0e0e0;
+}
+.coupons table td.last {
+    border-right: 1px solid #e0e0e0;
+}
+.coupons table .num {
+    color: #f28202;
+    font-weight: bold;
+}
+.coupons table th {
+    font-size: 12px;
+    border-bottom: 4px solid #e0e0e0;
+    padding-bottom: 3px;
+    color: #333;
+    padding: 0 10px;
+}
+.coupons .tips i{
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url(../images/tips-icon.png) 0 0 no-repeat;
+  position: absolute;
+  left: 0px;
+  top: 10px;
+}
+.coupons .tips i.close{
+  background-position: 0 -34px;
+}
+.coupons table th .gray {
+    color: #999;
+}
+.coupons table .hover {
+    background: #ffffcc;
     cursor: pointer;
+}
+.gray {
+    color: #999;
+}
+.my-account .page-title {
+    width: 778px;
+}
+.shipment-methods {
+    overflow: hidden;
+}
+.shipment-methods dd {
+    float: left;
+}
+.shipment-methods dt {
+    float: left;
+}
+table.onestepcheckout-summary thead th {
+    line-height: 30px;
+    background: #e3e2e3;
 }

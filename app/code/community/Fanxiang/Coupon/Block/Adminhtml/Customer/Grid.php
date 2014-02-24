@@ -47,29 +47,26 @@ class Fanxiang_Coupon_Block_Adminhtml_Customer_Grid extends Mage_Adminhtml_Block
         
         //赠送优惠券
         $types = Mage::getSingleton('coupon/coupontype')->toOptionArray();
-                 $couponTypes = array();
-         foreach($types as $type){
-              $typeid=$type['typeid'];
-              $name = $type['name']; 
-              $couponTypes[$typeid] = $name;
-         }
-        array_unshift($couponTypes, array('label'=> '', 'value'=> ''));
+        $couponTypes = array();
+        foreach($types as $type){
+            $typeid=$type['typeid'];
+            $name = $type['name']; 
+            $couponTypes[$typeid] = $name;
+        }
+
         $this->getMassactionBlock()->addItem('give_coupon', array(
-             'label'        => '赠送优惠券',
-             'url'          => $this->getUrl('coupon/adminhtml_coupon/giveCoupon'),
-             'additional'   => array(
+            'label'        => '赠送优惠券',
+            'url'          => $this->getUrl('coupon/adminhtml_coupon/giveCoupon'),
+            'additional'   => array(
                 'visibility'    => array(
-                     'name'     => 'coupontypes',
-                     'type'     => 'select',
-                     'class'    => 'required-entry',
-                     'label'    => '优惠券类型',
-                     'values'   => $couponTypes
-                 )
+                    'name'     => 'coupontypes',
+                    'type'     => 'select',
+                    'class'    => 'required-entry',
+                    'label'    => '优惠券类型',
+                    'values'   => $couponTypes
+                )
             )
         ));
-        
-
-
         return $this;
     }
 

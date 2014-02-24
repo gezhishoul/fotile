@@ -57,8 +57,10 @@ class Mage_Adminhtml_Block_Sales_Order_Grid extends Mage_Adminhtml_Block_Widget_
     protected function _prepareCollection()
     {
         $collection = Mage::getResourceModel($this->_getCollectionClass());
-        $collection->getSelect()->joinLeft('sales_flat_order_payment', 'main_table.entity_id = sales_flat_order_payment.parent_id','method');
+        $collection->getSelect()->joinLeft('sales_flat_order_payment', 'main_table.entity_id = sales_flat_order_payment.parent_id', 'method');
+        $collection->getSelect()->joinLeft('sales_flat_order_address', 'main_table.entity_id = sales_flat_order_address.parent_id and sales_flat_order_address.address_type="shipping"', array('street', 'city', 'region', 'telephone'));
         $this->setCollection($collection);
+        //echo $collection->getSelect();
         return parent::_prepareCollection();
     }
 
@@ -94,7 +96,7 @@ class Mage_Adminhtml_Block_Sales_Order_Grid extends Mage_Adminhtml_Block_Widget_
             'index' => 'billing_name',
         ));
 
-     /*   $this->addColumn('shipping_name', array(
+     /*$this->addColumn('shipping_name', array(
             'header' => Mage::helper('sales')->__('Ship to Name'),
             'index' => 'shipping_name',
         ));  */
@@ -103,8 +105,38 @@ class Mage_Adminhtml_Block_Sales_Order_Grid extends Mage_Adminhtml_Block_Widget_
             'header' => '支付方式',
             'index' => 'method',
             'type'      => 'options',
-            'options'   => array('alipay_payment' => '支付宝','tenpay_payment' => '财付通', 'cashondelivery' =>'货到付款'),
+            'options'   => array(
+                'alipay_payment' => '支付宝',
+                'tenpay_payment' => '财付通', 
+                'cashondelivery' =>'货到付款',
+                'unionpay_payment' =>'银联在线',
+                ),
         ));
+        $this->addColumn('region', array(
+            'header' => 'Region',
+            'index' => 'region',
+            'column_css_class'=>'no-display',
+            'header_css_class'=>'no-display'
+        ));
+        $this->addColumn('city', array(
+            'header' => 'City',
+            'index' => 'city',
+            'column_css_class'=>'no-display',
+            'header_css_class'=>'no-display'
+        ));
+        $this->addColumn('street', array(
+            'header' => 'Street',
+            'index' => 'street',
+            'column_css_class'=>'no-display',
+            'header_css_class'=>'no-display'
+        ));
+        
+        $this->addColumn('telephone', array(
+            'header' => 'Telephone',
+            'index' => 'telephone',
+            'column_css_class'=>'no-display',
+            'header_css_class'=>'no-display'
+            ));
 
         $this->addColumn('base_grand_total', array(
             'header' => Mage::helper('sales')->__('G.T. (Base)'),

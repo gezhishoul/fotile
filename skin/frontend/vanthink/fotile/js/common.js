@@ -66,6 +66,11 @@ jQuery(function() {
     },function(){
         jQuery(this).removeClass('orderFoucs');
     })
+    jQuery(".coupons table td").hover(function(){
+        jQuery(this).closest("tr").find("td").addClass('hover');
+    },function(){
+        jQuery(this).closest("tr").find("td").removeClass('hover');
+    })
     var choseAttr=jQuery('.proChosen #narrow-by-list li');
     choseAttr.hover(function(){
         jQuery(this).addClass('hoverFocus')
@@ -138,32 +143,22 @@ jQuery(function() {
     //  jQuery('#tax_class_id').parent().parent().remove();
 
     // lazy load init
-    jQuery('img.lazy').lazyload({
-        load: function(){
-            var self = this;
-            var jQueryself = jQuery(this);
-            jQueryself.removeClass('loading-img');
-            var img = new Image();
-            img.onload = function(){
-                jQueryself.css({
-                    'width': this.width,
-                    'height': this.height
-                });
-            };
-            img.src = jQueryself.attr('src');
-        }
+    jQuery(".products-grid").each(function(){
+        jQuery(this).find("img.lazy").lazyload({
+            load: function(){
+                var self = this;
+                var jQueryself = jQuery(this);
+                jQueryself.removeClass('loading-img');
+                var img = new Image();
+                img.onload = function(){
+                    jQueryself.css({
+                        'width': this.width,
+                        'height': this.height
+                    });
+                };
+                console.log(img.src);
+                img.src = jQueryself.attr('src');
+            }
+        })
     });
 });
-
-
-/* add by wangxianbin@vanhtink.net at 2013-09-26 */
-(function($) {
-    $(document).ready(function(){
-        $(".std-content").hover(function(){
-            $('.jshowoff-1-slidelinks').show();
-        }, function(){
-            $('.jshowoff-1-slidelinks').hide();
-        });
-    });
-})(jQuery);
-
